@@ -1,5 +1,6 @@
 import { Zap, Image, Keyboard, Eye, Lock, HardDrive, Undo2, Save, Layers } from "lucide-react"
 import { motion } from "framer-motion"
+import Tilt from 'react-parallax-tilt'
 
 const features = [
     {
@@ -89,13 +90,20 @@ export function Features() {
                         <motion.div
                             key={index}
                             variants={item}
-                            className="group p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-all duration-300 hover:border-indigo-500/30"
                         >
-                            <div className="mb-6 inline-flex p-3 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-300">
-                                <feature.icon className="h-6 w-6" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                            <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed">{feature.description}</p>
+                            <Tilt
+                                tiltMaxAngleX={5}
+                                tiltMaxAngleY={5}
+                                scale={1.02}
+                                transitionSpeed={2000}
+                                className="h-full group p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-all duration-300 hover:border-indigo-500/30"
+                            >
+                                <div className="mb-6 inline-flex p-3 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-300">
+                                    <feature.icon className="h-6 w-6" />
+                                </div>
+                                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                                <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed">{feature.description}</p>
+                            </Tilt>
                         </motion.div>
                     ))}
                 </motion.div>

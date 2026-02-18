@@ -2,6 +2,8 @@ import React, { type ReactNode, useEffect } from 'react';
 import Lenis from 'lenis';
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { ScrollProgress } from "@/components/scroll-progress"
+
 
 interface LayoutProps {
     children: ReactNode;
@@ -26,8 +28,25 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         requestAnimationFrame(raf);
 
+        const handleClick = (e: MouseEvent) => {
+            const target = (e.target as HTMLElement).closest('a');
+            if (!target) return;
+
+            const href = target.getAttribute('href');
+            if (href?.startsWith('#')) {
+                e.preventDefault();
+                const element = document.querySelector(href);
+                if (element) {
+                    lenis.scrollTo(element as HTMLElement, { offset: 0 });
+                }
+            }
+        };
+
+        document.addEventListener('click', handleClick);
+
         return () => {
             lenis.destroy();
+            document.removeEventListener('click', handleClick);
         };
     }, []);
 
@@ -40,7 +59,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <div className="absolute -bottom-32 left-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-[128px] animate-blob animation-delay-4000 mix-blend-multiply filter opacity-50 dark:opacity-20" />
             </div>
 
+            <ScrollProgress />
             <Navbar />
+
             <main className="relative z-10">
                 {children}
             </main>
