@@ -5,20 +5,20 @@ const steps = [
     {
         icon: FolderOpen,
         step: "01",
-        title: "Open Your Folder",
-        description: "Simply drag & drop any folder or browse to it. PhotoCuller instantly loads all your photos — including RAW formats from Canon, Sony, Nikon, and more.",
+        title: "Point & Shoot",
+        description: "Simply drag & drop any folder. PhotoCuller instantly accesses all your photos with zero import time—including professional RAW formats.",
     },
     {
         icon: Keyboard,
         step: "02",
-        title: "Cull with Shortcuts",
-        description: "Use keyboard shortcuts to rate, flag, and sort photos at lightning speed. Create custom buckets and assign single-key shortcuts for your workflow.",
+        title: "Keyboard Mastery",
+        description: "Master the one-key workflow. Assign favorite and reject actions to specific keys and let your muscle memory handle the rest at lightning speed.",
     },
     {
         icon: Download,
         step: "03",
-        title: "Export & Done",
-        description: "Move or copy your selected photos to destination folders. Ratings and labels are exported as XMP sidecars — ready for Lightroom or Capture One.",
+        title: "One-Click Handoff",
+        description: "Your ratings and labels are exported as XMP sidecars. Everything is ready to be opened in Lightroom or Capture One for the final edit.",
     },
 ]
 

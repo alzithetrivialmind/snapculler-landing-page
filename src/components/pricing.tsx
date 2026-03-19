@@ -83,16 +83,17 @@ export function Pricing() {
                         >
                             <div className="absolute top-0 right-0 bg-indigo-500 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl">POPULAR</div>
                             <h3 className="text-2xl font-bold mb-2">Pro</h3>
-                            <div className="text-4xl font-bold mb-6 tracking-tighter">$29<span className="text-lg font-normal text-muted-foreground"> one-time</span></div>
+                            <div className="text-4xl font-bold mb-6 tracking-tighter">$29<span className="text-lg font-normal text-muted-foreground"> One-time investment</span></div>
                             <p className="text-muted-foreground mb-8">The ultimate workflow for pros.</p>
                             <ul className="space-y-4 mb-8 flex-1">
                                 {[
                                     "Native RAW + HEIC Support",
-                                    "Star Ratings & Color Labels",
+                                    "Advanced EXIF Filtering (Lens, ISO)",
+                                    "Unlimited Workflow Presets",
+                                    "Zoom Sync & Focus Peaking",
                                     "XMP Sidecar Export (Lightroom)",
                                     "Batch Rename & Auto-Advance",
-                                    "Unlimited Buckets",
-                                    "Custom Keyboard Shortcuts"
+                                    "Unlimited Custom Buckets"
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-center gap-3">
                                         <div className="rounded-full bg-indigo-100 dark:bg-indigo-500/20 p-1">

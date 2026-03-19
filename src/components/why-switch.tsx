@@ -28,15 +28,15 @@ const advantages = [
     },
     {
         icon: Zap,
-        title: "Built for Speed, Not Bloat",
-        description: "PhotoCuller does one thing and does it exceptionally well: culling. No editing tools, no cloud sync, no catalog import. Just blazing-fast photo selection with native RAW preview.",
-        highlight: "< 50ms load",
+        title: "Built for Flow, Not Bloat",
+        description: "PhotoCuller does one thing: fast selection. No editing tools, no cloud sync, and no tedious catalog imports. Just instant previews that let you find your best work in seconds.",
+        highlight: "Zero Import",
     },
     {
         icon: Sparkles,
-        title: "Modern Experience",
-        description: "A clean, dark UI built with modern tech. Custom keyboard shortcuts, smooth animations, drag & drop, and an intuitive workflow that feels like it belongs in 2025 — not 2005.",
-        highlight: "2025 Design",
+        title: "Keyboard Mastery",
+        description: "A refined workflow built for speed. Use custom keyboard shortcuts to rate and move files instantly. It's designed to become muscle memory, so you can cull without thinking.",
+        highlight: "Muscle Memory",
     },
 ]
 

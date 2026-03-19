@@ -1,64 +1,76 @@
-import { Zap, Image, Keyboard, Eye, Lock, HardDrive, Undo2, Save, Layers } from "lucide-react"
+import { Zap, Image, Keyboard, Eye, HardDrive, Undo2, Layers, Briefcase, FastForward } from "lucide-react"
 import { motion } from "framer-motion"
 import Tilt from 'react-parallax-tilt'
 
-const features = [
+const featureGroups = [
     {
-        icon: Zap,
-        title: "Blazing Fast",
-        description: "Built for speed with Electron and native image processing. Cull thousands of photos in minutes, not hours.",
+        title: "The Speed Engine",
+        features: [
+            {
+                icon: Zap,
+                title: "Instant Previews",
+                description: "Zero-latency viewing even for 50MB RAW files. PhotoCuller extracts camera-embedded previews so you never wait for a loading bar again—keeping your laptop cool and responsive.",
+            },
+            {
+                icon: HardDrive,
+                title: "Zero Import",
+                description: "Direct access to your SD card or SSD. No building catalogs, no smart previews, and no bloating your hard drive with duplicate data.",
+            },
+            {
+                icon: Image,
+                title: "Native RAW Support",
+                description: "Seamless support for ARW, CR2, NEF, DNG, and HEIC. Transition through your professional portfolio without any friction.",
+            }
+        ]
     },
     {
-        icon: Image,
-        title: "RAW Support",
-        description: "Native support for RAW formats from all major camera manufacturers (Canon, Sony, Nikon, Fujifilm, etc).",
+        title: "The Workflow Master",
+        features: [
+            {
+                icon: Keyboard,
+                title: "Muscle Memory Workflow",
+                description: "Designed for speed. One key to favorite, one key to reject. Your hands never leave the keyboard.",
+            },
+            {
+                icon: Briefcase,
+                title: "1-Click Identity Switch (Pro)",
+                description: "Save your tactical key setups. Instantly switch keys 1-9 from a Wedding workflow to a Photojournalism workflow without reconfiguring.",
+            },
+            {
+                icon: FastForward,
+                title: "Smart Auto-Advance (Pro)",
+                description: "Accelerate your flow. The moment you rate or reject a photo, PhotoCuller instantly jumps to the next frame so you don't break your rhythm.",
+            }
+        ]
     },
     {
-        icon: Keyboard,
-        title: "Keyboard Driven",
-        description: "Keep your hands on the keyboard. Rate, flag, and navigate without touching the mouse.",
-    },
-    {
-        icon: Undo2,
-        title: "Smart Undo",
-        description: "Made a mistake? Just hit Ctrl+Z to undo moves, ratings, or flags instantly.",
-    },
-    {
-        icon: Eye,
-        title: "Instant Preview",
-        description: "Zero-latency full-screen previews with smart prefetching for the next image.",
-    },
-    {
-        icon: Save,
-        title: "Auto-Save",
-        description: "Never lose progress. PhotoCuller remembers your last folder and selection on restart.",
-    },
-    {
-        icon: Lock,
-        title: "Local Privacy",
-        description: "Your photos never leave your device. PhotoCuller works 100% offline securely.",
-    },
-    {
-        icon: HardDrive,
-        title: "Efficient Storage",
-        description: "Review images directly from your SD card or SSD without importing them first.",
-    },
-    {
-        icon: Layers,
-        title: "XMP Sidecars",
-        description: "Ratings and labels sync with Lightroom and Capture One via standard XMP files.",
+        title: "The Safety & Precision",
+        features: [
+            {
+                icon: Undo2,
+                title: "Safety Net (Ctrl+Z)",
+                description: "The ultimate mistake-proof feature. Instantly undo any move or rating with total peace of mind. Your files are always protected.",
+            },
+            {
+                icon: Eye,
+                title: "Focus Peaking (Pro)",
+                description: "Instantly verify sharpness. Smart highlights show you exactly where the focus landed, saving you from guessing on small screens.",
+            },
+            {
+                icon: Layers,
+                title: "Zoom Sync (Pro)",
+                description: "Perfect A/B testing. Compare two similar shots side-by-side with locked zoom and pan to pick the absolute best frame.",
+            }
+        ]
     }
 ]
 
 export function Features() {
-
     const container = {
         hidden: { opacity: 0 },
         show: {
             opacity: 1,
-            transition: {
-                staggerChildren: 0.1
-            }
+            transition: { staggerChildren: 0.1 }
         }
     }
 
@@ -79,34 +91,47 @@ export function Features() {
                     Designed for <span className="text-indigo-500 dark:text-indigo-400">Pro Workflows</span>
                 </motion.h2>
 
-                <motion.div
-                    variants={container}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                >
-                    {features.map((feature, index) => (
-                        <motion.div
-                            key={index}
-                            variants={item}
-                        >
-                            <Tilt
-                                tiltMaxAngleX={5}
-                                tiltMaxAngleY={5}
-                                scale={1.02}
-                                transitionSpeed={2000}
-                                className="h-full group p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-all duration-300 hover:border-indigo-500/30"
+                <div className="space-y-20">
+                    {featureGroups.map((group, groupIndex) => (
+                        <div key={groupIndex}>
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="flex items-center gap-4 mb-8"
                             >
-                                <div className="mb-6 inline-flex p-3 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-300">
-                                    <feature.icon className="h-6 w-6" />
-                                </div>
-                                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                                <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed">{feature.description}</p>
-                            </Tilt>
-                        </motion.div>
+                                <h3 className="text-2xl md:text-3xl font-bold">{group.title}</h3>
+                                <div className="h-px flex-1 bg-gradient-to-r from-neutral-200 to-transparent dark:from-neutral-800" />
+                            </motion.div>
+
+                            <motion.div
+                                variants={container}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true }}
+                                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                            >
+                                {group.features.map((feature, index) => (
+                                    <motion.div key={index} variants={item}>
+                                        <Tilt
+                                            tiltMaxAngleX={5}
+                                            tiltMaxAngleY={5}
+                                            scale={1.02}
+                                            transitionSpeed={2000}
+                                            className="h-full group p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-all duration-300 hover:border-indigo-500/30"
+                                        >
+                                            <div className="mb-6 inline-flex p-3 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-300">
+                                                <feature.icon className="h-6 w-6" />
+                                            </div>
+                                            <h4 className="text-xl font-bold mb-3">{feature.title}</h4>
+                                            <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed text-sm">{feature.description}</p>
+                                        </Tilt>
+                                    </motion.div>
+                                ))}
+                            </motion.div>
+                        </div>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     )

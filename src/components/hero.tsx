@@ -59,19 +59,19 @@ export function Hero() {
                         </Reveal>
                         <br className="hidden md:block" />
                         <Reveal delay={0.6} className="text-indigo-500 dark:text-indigo-400">
-                            Light Speed.
+                            Muscle Memory Speed
                         </Reveal>
                     </h1>
                 </div>
-
+ 
                 <motion.p
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.0, duration: 0.6 }}
                     className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto mb-12 leading-relaxed"
                 >
-                    The fastest way to review and select your best shots.
-                    Native RAW support, instant preview, and intuitive keyboard shortcuts.
+                    The ultra-lightweight way to sort thousands of shots instantly. 
+                    Zero import time, no-lag RAW previews, and a workflow designed to keep your hands on the keyboard.
                 </motion.p>
 
                 <motion.div
@@ -97,6 +97,16 @@ export function Hero() {
                     >
                         Learn More
                     </a>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.4, duration: 0.5 }}
+                    className="mt-6 flex items-center gap-2 text-sm font-medium text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-900/50 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800"
+                >
+                    <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+                    No subscriptions. Pro is just <span className="font-bold text-neutral-900 dark:text-white">$29 Lifetime</span>.
                 </motion.div>
             </div>
 

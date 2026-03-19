@@ -7,6 +7,7 @@ import { HowItWorks } from "@/components/how-it-works"
 import { Testimonials } from "@/components/testimonials"
 import { WhySwitch } from "@/components/why-switch"
 import { FAQ } from "@/components/faq"
+import { CTA } from "@/components/cta"
 import { Pricing } from "@/components/pricing"
 import { Comparison } from "@/components/comparison"
 
@@ -25,6 +26,7 @@ function App() {
         <Pricing />
         <Comparison />
         <FAQ />
+        <CTA />
       </Layout>
     </ThemeProvider>
   )

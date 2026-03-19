@@ -5,27 +5,27 @@ import { useState } from "react"
 const faqs = [
     {
         question: "Is PhotoCuller free?",
-        answer: "Yes! PhotoCuller has a generous free tier that includes blazing fast JPG/PNG viewing, basic culling with move/copy, zoom & pan, and up to 3 custom buckets. The Pro version unlocks RAW support, star ratings, color labels, XMP sidecar export, batch rename, and more."
+        answer: "Yes! PhotoCuller has a generous free tier for standard photos. You can view, Pan/Zoom, and sort JPG/PNG files instantly. The Pro version unlocks professional RAW support, unlimited workflow presets, advanced EXIF filtering, and seamless Lightroom integration."
     },
     {
-        question: "What RAW formats are supported?",
-        answer: "PhotoCuller Pro supports all major RAW formats including Canon CR2/CR3, Sony ARW, Nikon NEF, Adobe DNG, Panasonic RW2, Olympus ORF, Sony SR2, and Fujifilm RAF. We use a multi-strategy extraction pipeline for the fastest possible preview loading."
+        question: "What camera formats are supported?",
+        answer: "PhotoCuller Pro supports professional RAW formats from all major manufacturers, including Sony (ARW), Canon (CR2/CR3), Nikon (NEF), Fujifilm (RAF), and more. It also handles iPhone HEIC files perfectly."
     },
     {
         question: "Does it work offline?",
-        answer: "Absolutely. PhotoCuller runs 100% locally on your computer. Your photos never leave your device, and no internet connection is required for any feature. The only exception is the initial license activation for Pro users."
+        answer: "Absolutely. PhotoCuller is a desktop-native app that runs 100% on your machine. Your photos never leave your device, and you don't need an internet connection to cull your shoots with lightning speed."
     },
     {
-        question: "Is it compatible with Lightroom?",
-        answer: "Yes! PhotoCuller exports ratings and color labels as standard XMP sidecar files (.xmp). When you open your photos in Adobe Lightroom or Capture One, the ratings and labels are automatically imported."
+        question: "How does it sync with Lightroom?",
+        answer: "PhotoCuller uses industry-standard sidecar files. When you rate or label a photo, it creates a small metadata file that Adobe Lightroom and Capture One read automatically. Your sorting work is preserved perfectly."
     },
     {
         question: "What platforms are supported?",
-        answer: "PhotoCuller is currently available for Windows 10/11. macOS support is planned and coming soon. The app is built with Electron, so Linux support is also on our roadmap."
+        answer: "PhotoCuller is currently optimized for Windows 10 and 11. We are working hard to bring this same speed to macOS and other platforms very soon."
     },
     {
-        question: "How is this different from Photo Mechanic?",
-        answer: "PhotoCuller is designed to be faster and simpler for the culling workflow specifically. It features a modern UI, native RAW previews with progressive loading, and a one-time payment instead of a subscription. It's built for photographers who want speed without complexity."
+        question: "How is this different from existing tools?",
+        answer: "Most tools are bloated with editing features that slow down the initial selection process. PhotoCuller is built with one goal: Speed. It's about muscle memory, zero import lag, and getting your best shots found in record time."
     },
 ]
 

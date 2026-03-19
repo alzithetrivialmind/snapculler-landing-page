@@ -17,54 +17,48 @@ const comparison: ComparisonFeature[] = [
         category: "Image Viewing",
         features: [
             { name: "JPG, PNG, WebP Support", free: true, pro: true },
-            { name: "RAW Support (CR2, NEF, ARW, DNG, RW2, ORF, RAF)", free: false, pro: true },
-            { name: "HEIC / iPhone Format", free: false, pro: true },
-            { name: "Progressive RAW Loading (Instant Preview → HQ)", free: false, pro: true },
-            { name: "Smart Prefetching (3 next + 1 prev)", free: true, pro: true },
+            { name: "RAW & HEIC Support (All Manufacturers)", free: false, pro: true },
+            { name: "Instant Embedded Preview Extraction", free: false, pro: true },
+            { name: "Smart Prefetching (Next/Prev)", free: true, pro: true },
             { name: "Zoom & Pan (up to 5×)", free: true, pro: true },
         ]
     },
     {
-        category: "View Modes",
+        category: "Workflow Speed",
         features: [
-            { name: "Single View", free: true, pro: true },
-            { name: "Grid / Thumbnail View", free: true, pro: true },
-            { name: "Compare View (Side-by-Side A/B)", free: false, pro: true },
-            { name: "Filmstrip Navigation", free: false, pro: true },
-            { name: "Zoom Sync (Compare Mode)", free: false, pro: true },
-        ]
-    },
-    {
-        category: "Culling & Organization",
-        features: [
-            { name: "Custom Buckets", free: "Max 3", pro: "Unlimited" },
-            { name: "Move / Copy to Buckets", free: true, pro: true },
-            { name: "Star Ratings (1–5)", free: false, pro: true },
-            { name: "Color Labels (5 colors)", free: false, pro: true },
+            { name: "Zero Import Time (Direct Access)", free: true, pro: true },
+            { name: "Muscle Memory Shortcuts (1-key actions)", free: true, pro: true },
+            { name: "Dynamic Workflow Presets (Project Identities)", free: "1 Fixed Profile", pro: "Unlimited" },
+            { name: "Memory Management (10,000+ photos)", free: true, pro: true },
+            { name: "Safety Net (Ctrl+Z Undo System)", free: true, pro: true },
             { name: "Auto-Advance after Action", free: false, pro: true },
+        ]
+    },
+    {
+        category: "Professional Tools",
+        features: [
+            { name: "Focus Peaking (Sharpness Check)", free: false, pro: true },
+            { name: "Compare View (Side-by-Side)", free: false, pro: true },
+            { name: "Zoom Sync (Locked Pan/Zoom)", free: false, pro: true },
+            { name: "Burst Stacking (Group similar shots)", free: false, pro: true },
+        ]
+    },
+    {
+        category: "Organization",
+        features: [
+            { name: "Custom Move/Copy Buckets", free: "Max 3", pro: "Unlimited" },
+            { name: "Star Ratings & Color Labels", free: false, pro: true },
             { name: "Filter by Rating / Label", free: false, pro: true },
+            { name: "Advanced EXIF Filter (Lens/ISO)", free: false, pro: true },
         ]
     },
     {
-        category: "Metadata & Export",
+        category: "Metadata & Integration",
         features: [
-            { name: "EXIF Data Panel", free: "Basic", pro: "Full" },
-            { name: "XMP Sidecar Export (Lightroom / Capture One)", free: false, pro: true },
+            { name: "XMP Sidecar Export (Lightroom/C1)", free: false, pro: true },
             { name: "Batch Rename (Prefix + Sequential)", free: false, pro: true },
-            { name: "Batch Export (Move / Copy by Filter)", free: false, pro: true },
-        ]
-    },
-    {
-        category: "Workflow & UX",
-        features: [
-            { name: "Keyboard Shortcuts", free: "Basic", pro: "Full" },
-            { name: "Custom Keyboard Remapping", free: false, pro: true },
-            { name: "Shortcut Cheatsheet (?)", free: true, pro: true },
-            { name: "Undo System (Ctrl+Z)", free: true, pro: true },
-            { name: "Drag & Drop Folder", free: true, pro: true },
-            { name: "Session Persistence", free: true, pro: true },
-            { name: "Dark Mode UI", free: true, pro: true },
-            { name: "Interactive Onboarding Tour", free: true, pro: true },
+            { name: "Full EXIF Data Panel", free: "Basic", pro: "Full" },
+            { name: "100% Offline Performance", free: true, pro: true },
         ]
     },
 ]
