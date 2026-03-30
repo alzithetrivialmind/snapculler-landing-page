@@ -1,3 +1,5 @@
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
+import { useEffect } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import Layout from "@/components/layout"
 import { Hero } from "@/components/hero"
@@ -10,24 +12,57 @@ import { FAQ } from "@/components/faq"
 import { CTA } from "@/components/cta"
 import { Pricing } from "@/components/pricing"
 import { Comparison } from "@/components/comparison"
+import { ReleasesPage } from "@/pages/releases"
 
+// This component ensures the window scrolls to the correct section 
+// when navigating to /#hash routes, because React mounts async.
+function ScrollHandler() {
+  const { pathname, hash } = useLocation()
 
+  useEffect(() => {
+    if (hash === '') {
+      window.scrollTo(0, 0)
+    } else {
+      setTimeout(() => {
+        const id = hash.replace('#', '')
+        const element = document.getElementById(id)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    }
+  }, [pathname, hash])
+
+  return null
+}
+
+function LandingPage() {
+  return (
+    <Layout>
+      <Hero />
+      <VideoDemo />
+      <Features />
+      <HowItWorks />
+      <Testimonials />
+      <WhySwitch />
+      <Pricing />
+      <Comparison />
+      <FAQ />
+      <CTA />
+    </Layout>
+  )
+}
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="photoculler-theme">
-      <Layout>
-        <Hero />
-        <VideoDemo />
-        <Features />
-        <HowItWorks />
-        <Testimonials />
-        <WhySwitch />
-        <Pricing />
-        <Comparison />
-        <FAQ />
-        <CTA />
-      </Layout>
+    <ThemeProvider defaultTheme="dark" storageKey="snapculler-theme">
+      <BrowserRouter>
+        <ScrollHandler />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/releases" element={<ReleasesPage />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   )
 }

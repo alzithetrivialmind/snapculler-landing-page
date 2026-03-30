@@ -9,7 +9,7 @@ const featureGroups = [
             {
                 icon: Zap,
                 title: "Instant Previews",
-                description: "Zero-latency viewing even for 50MB RAW files. PhotoCuller extracts camera-embedded previews so you never wait for a loading bar again—keeping your laptop cool and responsive.",
+                description: "Zero-latency viewing even for 50MB RAW files. SnapCuller extracts camera-embedded previews so you never wait for a loading bar again—keeping your laptop cool and responsive.",
             },
             {
                 icon: HardDrive,
@@ -39,7 +39,7 @@ const featureGroups = [
             {
                 icon: FastForward,
                 title: "Smart Auto-Advance (Pro)",
-                description: "Accelerate your flow. The moment you rate or reject a photo, PhotoCuller instantly jumps to the next frame so you don't break your rhythm.",
+                description: "Accelerate your flow. The moment you rate or reject a photo, SnapCuller instantly jumps to the next frame so you don't break your rhythm.",
             }
         ]
     },

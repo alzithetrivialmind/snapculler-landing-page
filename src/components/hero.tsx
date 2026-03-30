@@ -46,10 +46,14 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="inline-flex items-center rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 px-3 py-1 text-sm text-neutral-900 dark:text-neutral-100 mb-8 backdrop-blur-xl"
                 >
-                    <span className="flex h-2 w-2 rounded-full bg-indigo-500 mr-2 animate-pulse"></span>
-                    v1.0 Now Available
+                    <a
+                        href="/releases"
+                        className="inline-flex items-center rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 px-3 py-1 text-sm text-neutral-900 dark:text-neutral-100 mb-8 backdrop-blur-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+                    >
+                        <span className="flex h-2 w-2 rounded-full bg-indigo-500 mr-2 animate-pulse"></span>
+                        v1.1.2 Now Available
+                    </a>
                 </motion.div>
 
                 <div className="mb-8 max-w-5xl">

@@ -44,7 +44,7 @@ export function VideoDemo() {
                     className="max-w-5xl mx-auto"
                 >
                     <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tighter">
-                        See <span className="text-indigo-500 dark:text-indigo-400">PhotoCuller</span> in Action
+                        See <span className="text-indigo-500 dark:text-indigo-400">SnapCuller</span> in Action
                     </h2>
                     <p className="text-xl text-neutral-500 dark:text-neutral-400 mb-16 max-w-2xl mx-auto">
                         Experience the speed and simplicity of our native desktop application.
@@ -64,7 +64,7 @@ export function VideoDemo() {
                             <div className="w-2.5 h-2.5 rounded-full bg-red-400/50" />
                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/50" />
                             <div className="w-2.5 h-2.5 rounded-full bg-green-400/50" />
-                            <span className="text-xs text-neutral-500 ml-3 font-medium">PhotoCuller</span>
+                            <span className="text-xs text-neutral-500 ml-3 font-medium">SnapCuller</span>
                         </div>
 
                         {/* Content Area */}

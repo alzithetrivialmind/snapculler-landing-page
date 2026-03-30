@@ -1,4 +1,4 @@
-# PhotoCuller: Product Ecosystem & Technical Architecture Analysis
+# SnapCuller: Product Ecosystem & Technical Architecture Analysis
 
 **Role:** Senior Technical Architect & Product Manager
 **Date:** March 2026
@@ -8,7 +8,7 @@
 
 ## 1. Product Overview & Vision
 
-**PhotoCuller** adalah aplikasi kurasi foto (*photo culling*) *desktop-native* yang dirancang dengan obsesi penuh terhadap **kecepatan absolut** dan **efisiensi memori**. 
+**SnapCuller** adalah aplikasi kurasi foto (*photo culling*) *desktop-native* yang dirancang dengan obsesi penuh terhadap **kecepatan absolut** dan **efisiensi memori**. 
 
 **Target Pengguna (Niche):** Fotografer profesional (pernikahan, acara, satwa liar, olahraga) yang memotret ribuan *frame* per sesi dan tidak memiliki waktu (atau kesabaran) untuk menunggu proses *rendering* RAW yang lambat di perangkat lunak konvensional.
 
@@ -25,7 +25,7 @@
 
 Strategi bisnis kami bertumpu pada model Freemium untuk akuisisi pengguna, namun memberikan nilai yang tidak bisa ditolak untuk *power user* yang memproses dokumen dalam skala industri.
 
-| Fitur | PhotoCuller Free ($0) | PhotoCuller Pro ($29 Lifetime) |
+| Fitur | SnapCuller Free ($0) | SnapCuller Pro ($29 Lifetime) |
 | :--- | :--- | :--- |
 | **Dukungan Format File** | Standard (JPG, PNG, WebP) | **ALL RAW** (ARW, CR2, NEF, DNG, dll) + **HEIC** |
 | **Workflow (Buckets)** | Terbatas (Maksimal 3 fungsi *bucket*) | **Unlimited Buckets** (*Move/Copy*) |
@@ -46,7 +46,7 @@ Aplikasi dibangun menggunakan infrastruktur **Node.js** modern dengan perpaduan 
 
 *   **Runtime:** Electron 40 (Digunakan sebagai wadah OS-agnostic dan *file-system access*).
 *   **Frontend Engine:** React 19 dengan TypeScript 5.9 (Aman, cepat, minim *runtime error*).
-*   **Styling:** TailwindCSS 4 (Utility-first CSS untuk mengamankan ukuran bundel dan integrasi *dark mode* bawaan aplikasi).
+*   **Styling:** TailwindCSS 4 (Utility-first CSS untuk mengamamanan ukuran bundel dan integrasi *dark mode* bawaan aplikasi).
 *   **Image Processing Library:** 
     *   `sharp` (Berbasis *libvips* yang sangat ringan dan menggunakan *native multi-threading* C++ untuk manipulasi gambar).
     *   `exifr` (Mesin ekstraksi *metadata* tercepat di ekosistem JS).
@@ -56,7 +56,7 @@ Aplikasi dibangun menggunakan infrastruktur **Node.js** modern dengan perpaduan 
 
 ## 4. Backend Logic & Architecture
 
-PhotoCuller tidak menggunakan basis data eksternal (SQL/NoSQL) guna menghindari beban *overhead*. Segala proses bergantung pada *memory management* secara *real-time* dengan IPC (*Inter-Process Communication*) yang dioptimalkan antara *Main Process* (Electron) dan *Renderer Process* (React).
+SnapCuller tidak menggunakan basis data eksternal (SQL/NoSQL) guna menghindari beban *overhead*. Segala proses bergantung pada *memory management* secara *real-time* dengan IPC (*Inter-Process Communication*) yang dioptimalkan antara *Main Process* (Electron) dan *Renderer Process* (React).
 
 ### Penanganan Ribuan File & Multi-Threading
 Alih-alih membaca seluruh foto saat peluncuran, aplikasi ini menggunakan *event-driven reading*:
@@ -76,16 +76,16 @@ Kunci kenapa UI terasa secepat kilat (0 delay loading) adalah dengan teknik pram
 
 ## 5. Efficiency Engineering (Rahasia Performa Ultra-Lightweight)
 
-Mengapa PhotoCuller terasa jauh lebih lincah dibandingkan Adobe Lightroom? Berikut implementasi perancangan algoritmanya:
+Mengapa SnapCuller terasa jauh lebih lincah dibandingkan Adobe Lightroom? Berikut implementasi perancangan algoritmanya:
 
 1.  **"Tembak Dulu, Render Kemudian" (Embedded Preview Extraction)**:
     Software tradisional mencoba men-*decode* matriks sensor bayer dari *file* RAW secara algoritmik (sangat-sangat berat, butuh VRAM). 
-    *   **Trik PhotoCuller**: Mengeksploitasi dan "merampok" JPEG pratinjau mentah yang **sudah dibenamkan** (*embedded preview*) secara otomatis oleh kamera (Sony, Canon, Nikon) di dalam badan file RAW (*Strategy Byte-size scanning* / End-of-Image `0xFF 0xD9` extraction). 
+    *   **Trik SnapCuller**: Mengeksploitasi dan "merampok" JPEG pratinjau mentah yang **sudah dibenamkan** (*embedded preview*) secara otomatis oleh kamera (Sony, Canon, Nikon) di dalam badan file RAW (*Strategy Byte-size scanning* / End-of-Image `0xFF 0xD9` extraction). 
     *   Melompat langsung ke JPEG memungkinkan foto 40MB terbuka dalam 3-10 milidetik tanpa sentuhan CPU besar.
 
 2.  **Progressive Enhancement Architecture**:
     *   `image:load` (Fase 1): Mereturn ekstrak RAW (atau JPG biasa) seketika untuk navigasi beruntun cepat.
-    *   `image:load-hq` (Fase 2): *Background task* dengan tingkat prioritas rendah. Aplikasi menganalisa dimensi gambar pratinjau. Jika resolusi dimensi terkecil gambar berada di bawah ambang batas ketajaman (`MIN_HQ_PIXELS`), maka PhotoCuller menggunakan *library* `sharp` untuk melakukan *upscale* & *sharpening* di layar belakang, agar fitur seperti pengujian *Focus Peaking* (mengecek mata subjek foto) tetap valid dan super HD.
+    *   `image:load-hq` (Fase 2): *Background task* dengan tingkat prioritas rendah. Aplikasi menganalisa dimensi gambar pratinjau. Jika resolusi dimensi terkecil gambar berada di bawah ambang batas ketajaman (`MIN_HQ_PIXELS`), maka SnapCuller menggunakan *library* `sharp` untuk melakukan *upscale* & *sharpening* di layar belakang, agar fitur seperti pengujian *Focus Peaking* (mengecek mata subjek foto) tetap valid dan super HD.
 
 3.  **RAM & Cache Garbage Collection Aktif**:
     Tidak seperti Chrome yang menyimpan *cache* tanpa batas. Kami membatasi simpanan ekstraksi JPEG pada **maksimal 30 iterasi terakhir** (menggunakan taktik LRU / *Least Recently Used Map*). Cache lama akan segera dieliminasi untuk menjaga pemakaian RAM minimum.
@@ -116,9 +116,10 @@ Dengan harga standar **$29 Lifetime**, aplikasi ini mengisi celah pasar *niche* 
 *   **Kehilangan Metadata**: Workflow Adobe *Handoff* (Ekspor XMP) dibuat eksklusif Pro, agar retensi fotografer profesional dapat disaring di atas sana.
 
 **Future Roadmap (Validasi Nilai $29):**
-*   **Phase 6 (Distribution & Infrastructure):** Eksekusi *Automated CI/CD* Installer. Mendaftarkan sertifikat MacOS (`.dmg`) dan Windows (`.exe`) *code-signing* guna bypass notifikasi *SmartScreen* "Virus Berbahaya", memastikan program mudah dibeli & digunakan awam.
-*   **Phase 7 (AI Integration):** Model Deteksi Fokus (ONNX Model). Mengeksekusi secara lokal *AI Machine Learning* untuk otomatis memeriksa ratusan file RAW, lalu PhotoCuller sendirinya memberi label/warna merah pada foto buram & tak fokus, atau mata yang tertutup *blink detector* - hal yang biasa menyiksa mata fotografer acara pernikahan atau peliput olahraga jika diperiksa manual satu per satu.
+*   **Phase 6 (Distribution & Infrastructure):** Eksekusi *Automated CI/CD* Installer. Mendaftarkan sertifikat MacOS (`.dmg`) & Windows (`.exe`) *code-signing* guna bypass notifikasi *SmartScreen* "Virus Berbahaya", memastikan program mudah dibeli & digunakan awam.
+*   **Phase 7 (AI Integration):** Model Deteksi Fokus (ONNX Model). Mengeksekusi secara lokal *AI Machine Learning* untuk otomatis memeriksa ratusan file RAW, lalu SnapCuller sendirinya memberi label/warna merah pada foto buram & tak fokus, atau mata yang tertutup *blink detector* - hal yang biasa menyiksa mata fotografer acara pernikahan atau peliput olahraga jika diperiksa manual satu per satu.
 *   **Performance Analytics Panel**: Analisis visual (*chart*) sebar data f-stop, ISO, lensa mana yang paling sering dipakai klien sepanjang bulan (*insight engine* lanjutan menggunakan data JSON Exifr yang sudah tergabung pada kode yang ada).
 
 ---
 *End of Analysis Overview.*
+

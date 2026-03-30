@@ -23,13 +23,13 @@ const advantages = [
     {
         icon: DollarSign,
         title: "Pay Once, Own Forever",
-        description: "No subscriptions. No annual renewals. One purchase, lifetime access. While others charge $10/month or $139 upfront, PhotoCuller Pro is just $29 — forever.",
+        description: "No subscriptions. No annual renewals. One purchase, lifetime access. While others charge $10/month or $139 upfront, SnapCuller Pro is just $29 — forever.",
         highlight: "$29 one-time",
     },
     {
         icon: Zap,
         title: "Built for Flow, Not Bloat",
-        description: "PhotoCuller does one thing: fast selection. No editing tools, no cloud sync, and no tedious catalog imports. Just instant previews that let you find your best work in seconds.",
+        description: "SnapCuller does one thing: fast selection. No editing tools, no cloud sync, and no tedious catalog imports. Just instant previews that let you find your best work in seconds.",
         highlight: "Zero Import",
     },
     {
@@ -54,7 +54,7 @@ export function WhySwitch() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter">
-                        Why <span className="text-indigo-500 dark:text-indigo-400">Switch</span> to PhotoCuller?
+                        Why <span className="text-indigo-500 dark:text-indigo-400">Switch</span> to SnapCuller?
                     </h2>
                     <p className="text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
                         We respect the tools that came before us. But photographers deserve better.
@@ -96,14 +96,14 @@ export function WhySwitch() {
                         <div className="h-px w-12 bg-neutral-300 dark:bg-neutral-700" />
                         <ArrowRight className="h-5 w-5 text-indigo-500" />
                         <span className="text-sm font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-wider">
-                            PhotoCuller's Approach
+                            SnapCuller's Approach
                         </span>
                         <ArrowRight className="h-5 w-5 text-indigo-500 rotate-180 hidden" />
                         <div className="h-px w-12 bg-neutral-300 dark:bg-neutral-700" />
                     </div>
                 </motion.div>
 
-                {/* PhotoCuller Advantages */}
+                {/* SnapCuller Advantages */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                     {advantages.map((adv, i) => (
                         <motion.div

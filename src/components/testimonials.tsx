@@ -10,7 +10,7 @@ const stats = [
 
 const testimonials = [
     {
-        quote: "PhotoCuller saved me hours on my wedding shoots. The keyboard-first workflow is exactly what I needed.",
+        quote: "SnapCuller saved me hours on my wedding shoots. The keyboard-first workflow is exactly what I needed.",
         name: "Sarah Chen",
         role: "Wedding Photographer",
         rating: 5,
@@ -22,7 +22,7 @@ const testimonials = [
         rating: 5,
     },
     {
-        quote: "I switched from Photo Mechanic. PhotoCuller is faster, cleaner, and the price is unbeatable.",
+        quote: "I switched from Photo Mechanic. SnapCuller is faster, cleaner, and the price is unbeatable.",
         name: "Lisa Morales",
         role: "Event Photographer",
         rating: 5,

@@ -1,4 +1,5 @@
-import { Camera, Github } from "lucide-react"
+import { Github } from "lucide-react"
+import { ThemeLogo } from "@/components/theme-logo"
 
 export function Footer() {
     return (
@@ -8,8 +9,8 @@ export function Footer() {
                     {/* Brand */}
                     <div className="md:col-span-1">
                         <div className="flex items-center space-x-2 font-bold text-lg mb-4">
-                            <Camera className="h-5 w-5 text-indigo-500" />
-                            <span className="tracking-tight">PhotoCuller</span>
+                            <ThemeLogo className="h-6 w-auto" />
+                            <span className="tracking-tight">SnapCuller</span>
                         </div>
                         <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
                             The fastest way to review and select your best shots.
@@ -20,10 +21,11 @@ export function Footer() {
                     <div>
                         <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-neutral-900 dark:text-white">Product</h4>
                         <ul className="space-y-3 text-sm text-neutral-500 dark:text-neutral-400">
-                            <li><a href="#features" className="hover:text-foreground transition-colors">Features</a></li>
-                            <li><a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a></li>
-                            <li><a href="#how-it-works" className="hover:text-foreground transition-colors">How It Works</a></li>
-                            <li><a href="#faq" className="hover:text-foreground transition-colors">FAQ</a></li>
+                            <li><a href="/#features" className="hover:text-foreground transition-colors">Features</a></li>
+                            <li><a href="/#pricing" className="hover:text-foreground transition-colors">Pricing</a></li>
+                            <li><a href="/#how-it-works" className="hover:text-foreground transition-colors">How It Works</a></li>
+                            <li><a href="/releases" className="hover:text-foreground transition-colors">Releases</a></li>
+                            <li><a href="/#faq" className="hover:text-foreground transition-colors">FAQ</a></li>
                         </ul>
                     </div>
 
@@ -31,9 +33,9 @@ export function Footer() {
                     <div>
                         <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-neutral-900 dark:text-white">Support</h4>
                         <ul className="space-y-3 text-sm text-neutral-500 dark:text-neutral-400">
-                            <li><a href="https://github.com/alzithetrivialmind/PhotoCuller/issues" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Report a Bug</a></li>
-                            <li><a href="https://github.com/alzithetrivialmind/PhotoCuller" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a></li>
-                            <li><a href="mailto:support@photoculler.com" className="hover:text-foreground transition-colors">Contact</a></li>
+                            <li><a href="https://github.com/alzithetrivialmind/SnapCuller/issues" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Report a Bug</a></li>
+                            <li><a href="https://github.com/alzithetrivialmind/SnapCuller" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a></li>
+                            <li><a href="mailto:support@snapculler.com" className="hover:text-foreground transition-colors">Contact</a></li>
                         </ul>
                     </div>
 
@@ -50,11 +52,19 @@ export function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-neutral-200 dark:border-neutral-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                        &copy; {new Date().getFullYear()} PhotoCuller. All rights reserved.
+                        &copy; {new Date().getFullYear()} SnapCuller.{" "}
+                        <a
+                            href="https://www.digisentralsolusi.id"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-foreground transition-colors"
+                        >
+                            All Rights Reserved — CV Digisentral Solusi
+                        </a>
                     </p>
                     <div className="flex items-center gap-4">
                         <a
-                            href="https://github.com/alzithetrivialmind/PhotoCuller"
+                            href="https://github.com/alzithetrivialmind/SnapCuller"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-neutral-400 hover:text-foreground transition-colors"

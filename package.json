@@ -1,5 +1,5 @@
 {
-  "name": "photoculler-web",
+  "name": "snapculler-web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -19,6 +19,7 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-parallax-tilt": "^1.7.319",
+    "react-router-dom": "^7.13.2",
     "tailwind-merge": "^3.4.1"
   },
   "devDependencies": {

@@ -4,28 +4,28 @@ import { useState } from "react"
 
 const faqs = [
     {
-        question: "Is PhotoCuller free?",
-        answer: "Yes! PhotoCuller has a generous free tier for standard photos. You can view, Pan/Zoom, and sort JPG/PNG files instantly. The Pro version unlocks professional RAW support, unlimited workflow presets, advanced EXIF filtering, and seamless Lightroom integration."
+        question: "Is SnapCuller free?",
+        answer: "Yes! SnapCuller has a generous free tier for standard photos. You can view, Pan/Zoom, and sort JPG/PNG files instantly. The Pro version unlocks professional RAW support, unlimited workflow presets, advanced EXIF filtering, and seamless Lightroom integration."
     },
     {
         question: "What camera formats are supported?",
-        answer: "PhotoCuller Pro supports professional RAW formats from all major manufacturers, including Sony (ARW), Canon (CR2/CR3), Nikon (NEF), Fujifilm (RAF), and more. It also handles iPhone HEIC files perfectly."
+        answer: "SnapCuller Pro supports professional RAW formats from all major manufacturers, including Sony (ARW), Canon (CR2/CR3), Nikon (NEF), Fujifilm (RAF), and more. It also handles iPhone HEIC files perfectly."
     },
     {
         question: "Does it work offline?",
-        answer: "Absolutely. PhotoCuller is a desktop-native app that runs 100% on your machine. Your photos never leave your device, and you don't need an internet connection to cull your shoots with lightning speed."
+        answer: "Absolutely. SnapCuller is a desktop-native app that runs 100% on your machine. Your photos never leave your device, and you don't need an internet connection to cull your shoots with lightning speed."
     },
     {
         question: "How does it sync with Lightroom?",
-        answer: "PhotoCuller uses industry-standard sidecar files. When you rate or label a photo, it creates a small metadata file that Adobe Lightroom and Capture One read automatically. Your sorting work is preserved perfectly."
+        answer: "SnapCuller uses industry-standard sidecar files. When you rate or label a photo, it creates a small metadata file that Adobe Lightroom and Capture One read automatically. Your sorting work is preserved perfectly."
     },
     {
         question: "What platforms are supported?",
-        answer: "PhotoCuller is currently optimized for Windows 10 and 11. We are working hard to bring this same speed to macOS and other platforms very soon."
+        answer: "SnapCuller is currently optimized for Windows 10 and 11. We are working hard to bring this same speed to macOS and other platforms very soon."
     },
     {
         question: "How is this different from existing tools?",
-        answer: "Most tools are bloated with editing features that slow down the initial selection process. PhotoCuller is built with one goal: Speed. It's about muscle memory, zero import lag, and getting your best shots found in record time."
+        answer: "Most tools are bloated with editing features that slow down the initial selection process. SnapCuller is built with one goal: Speed. It's about muscle memory, zero import lag, and getting your best shots found in record time."
     },
 ]
 
@@ -92,7 +92,7 @@ export function FAQ() {
                         Frequently Asked <span className="text-indigo-500 dark:text-indigo-400">Questions</span>
                     </h2>
                     <p className="text-xl text-neutral-500 dark:text-neutral-400">
-                        Everything you need to know about PhotoCuller.
+                        Everything you need to know about SnapCuller.
                     </p>
                 </motion.div>
 

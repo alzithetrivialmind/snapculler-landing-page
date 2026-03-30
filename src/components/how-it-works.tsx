@@ -6,7 +6,7 @@ const steps = [
         icon: FolderOpen,
         step: "01",
         title: "Point & Shoot",
-        description: "Simply drag & drop any folder. PhotoCuller instantly accesses all your photos with zero import time—including professional RAW formats.",
+        description: "Simply drag & drop any folder. SnapCuller instantly accesses all your photos with zero import time—including professional RAW formats.",
     },
     {
         icon: Keyboard,
