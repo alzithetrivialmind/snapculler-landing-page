@@ -3,6 +3,7 @@ import { Rocket, FileText, Sparkles, Bug, Tag, ArrowLeft, ExternalLink } from "l
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ScrollProgress } from "@/components/scroll-progress"
+import { SEO } from "@/components/seo"
 
 const releases = [
     {
@@ -115,6 +116,10 @@ const releases = [
 export function ReleasesPage() {
     return (
         <div className="min-h-screen bg-background text-foreground">
+            <SEO 
+                title="Release Notes" 
+                description="Keep track of the latest updates and improvements to SnapCuller. We're always working to make your workflow faster." 
+            />
             <ScrollProgress />
             <Navbar />
 

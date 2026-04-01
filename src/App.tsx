@@ -13,6 +13,9 @@ import { CTA } from "@/components/cta"
 import { Pricing } from "@/components/pricing"
 import { Comparison } from "@/components/comparison"
 import { ReleasesPage } from "@/pages/releases"
+import { PrivacyPage } from "@/pages/privacy"
+import { TermsPage } from "@/pages/terms"
+import { SEO } from "@/components/seo"
 
 // This component ensures the window scrolls to the correct section 
 // when navigating to /#hash routes, because React mounts async.
@@ -39,6 +42,7 @@ function ScrollHandler() {
 function LandingPage() {
   return (
     <Layout>
+      <SEO />
       <Hero />
       <VideoDemo />
       <Features />
@@ -61,6 +65,8 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/releases" element={<ReleasesPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

@@ -25,3 +25,6 @@ dist-ssr
 
 # Rebranding resources
 from-apps/
+
+# Legal drafts
+legal_drafts.md

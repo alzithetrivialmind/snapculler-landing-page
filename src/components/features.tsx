@@ -4,61 +4,61 @@ import Tilt from 'react-parallax-tilt'
 
 const featureGroups = [
     {
-        title: "The Speed Engine",
+        title: "High-Performance Culling Engine",
         features: [
             {
                 icon: Zap,
-                title: "Instant Previews",
+                title: "Instant RAW Previews",
                 description: "Zero-latency viewing even for 50MB RAW files. SnapCuller extracts camera-embedded previews so you never wait for a loading bar again—keeping your laptop cool and responsive.",
             },
             {
                 icon: HardDrive,
-                title: "Zero Import",
+                title: "Zero Import Workflow",
                 description: "Direct access to your SD card or SSD. No building catalogs, no smart previews, and no bloating your hard drive with duplicate data.",
             },
             {
                 icon: Image,
-                title: "Native RAW Support",
+                title: "Professional RAW Support",
                 description: "Seamless support for ARW, CR2, NEF, DNG, and HEIC. Transition through your professional portfolio without any friction.",
             }
         ]
     },
     {
-        title: "The Workflow Master",
+        title: "Efficiency-First Workflow Master",
         features: [
             {
                 icon: Keyboard,
-                title: "Muscle Memory Workflow",
+                title: "Muscle Memory Hotkeys",
                 description: "Designed for speed. One key to favorite, one key to reject. Your hands never leave the keyboard.",
             },
             {
                 icon: Briefcase,
-                title: "1-Click Identity Switch (Pro)",
+                title: "Tactical Workflow Presets",
                 description: "Save your tactical key setups. Instantly switch keys 1-9 from a Wedding workflow to a Photojournalism workflow without reconfiguring.",
             },
             {
                 icon: FastForward,
-                title: "Smart Auto-Advance (Pro)",
+                title: "Smart Auto-Advance Logic",
                 description: "Accelerate your flow. The moment you rate or reject a photo, SnapCuller instantly jumps to the next frame so you don't break your rhythm.",
             }
         ]
     },
     {
-        title: "The Safety & Precision",
+        title: "Precision Selection Tools",
         features: [
             {
                 icon: Undo2,
-                title: "Safety Net (Ctrl+Z)",
+                title: "Non-Destructive Safety Net",
                 description: "The ultimate mistake-proof feature. Instantly undo any move or rating with total peace of mind. Your files are always protected.",
             },
             {
                 icon: Eye,
-                title: "Focus Peaking (Pro)",
+                title: "Pro Focus Peaking",
                 description: "Instantly verify sharpness. Smart highlights show you exactly where the focus landed, saving you from guessing on small screens.",
             },
             {
                 icon: Layers,
-                title: "Zoom Sync (Pro)",
+                title: "Side-by-Side Zoom Sync",
                 description: "Perfect A/B testing. Compare two similar shots side-by-side with locked zoom and pan to pick the absolute best frame.",
             }
         ]

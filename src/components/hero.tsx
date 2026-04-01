@@ -58,6 +58,7 @@ export function Hero() {
 
                 <div className="mb-8 max-w-5xl">
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none mb-2">
+                        <span className="sr-only">SnapCuller — The Fastest Photo Culling Software</span>
                         <Reveal delay={0.2} className="bg-gradient-to-b from-neutral-900 via-neutral-700 to-neutral-400 dark:from-white dark:via-neutral-200 dark:to-neutral-500 bg-clip-text text-transparent">
                             Cull Photos at
                         </Reveal>
@@ -86,6 +87,8 @@ export function Hero() {
                 >
                     <a
                         href="#pricing"
+                        title="Download SnapCuller Photo Culling Software for Windows"
+                        aria-label="Download SnapCuller for Windows"
                         className="relative inline-flex h-14 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-slate-50 transition-transform hover:scale-105"
                     >
                         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
