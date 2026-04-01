@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Rocket, FileText, Sparkles, Bug, Tag, ArrowLeft, ExternalLink } from "lucide-react"
+import { Rocket, FileText, Sparkles, Bug, Tag, ArrowLeft } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ScrollProgress } from "@/components/scroll-progress"
@@ -253,23 +253,6 @@ export function ReleasesPage() {
                         </div>
                     </div>
 
-                    {/* GitHub CTA */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 }}
-                        className="text-center mt-16"
-                    >
-                        <a
-                            href="https://github.com/alzithetrivialmind/snapculler-landing-page/releases"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 text-sm font-medium hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
-                        >
-                            <ExternalLink className="h-4 w-4" />
-                            View all releases on GitHub
-                        </a>
-                    </motion.div>
                 </div>
             </main>
 

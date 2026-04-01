@@ -23,12 +23,24 @@ export function SEO({ title, description }: SEOProps) {
       metaDescription.setAttribute("content", description || DEFAULT_DESCRIPTION);
     }
 
+    // Update Canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', window.location.origin + window.location.pathname);
+
     // Update Open Graph tags for better social sharing consistency
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute("content", formattedTitle);
 
     const ogDescription = document.querySelector('meta[property="og:description"]');
     if (ogDescription) ogDescription.setAttribute("content", description || DEFAULT_DESCRIPTION);
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute("content", window.location.href);
 
   }, [title, description]);
 
