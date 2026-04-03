@@ -16,12 +16,8 @@ const releases = [
                 icon: Rocket,
                 items: [
                     {
-                        label: "Advanced Metadata Grouping",
-                        description: "Support for grouping by Camera, Lens, and ISO to separate gear setups instantly.",
-                    },
-                    {
-                        label: "Security & Gating Audit",
-                        description: "Enhanced Pro-feature locking for keyboard shortcuts (External Editor, Face Panel) to ensure consistency.",
+                        label: "Advanced Metadata Grouping (Pro)",
+                        description: "Added support for grouping your gallery by Camera model, Lens model, and ISO. Perfect for high-volume photographers.",
                     },
                 ],
             },
@@ -30,8 +26,8 @@ const releases = [
                 icon: Bug,
                 items: [
                     {
-                        label: "Grid Selection Fix",
-                        description: "Resolved auto-scrolling issues when selecting images in grouped view modes.",
+                        label: "Grid View Stability",
+                        description: "Resolved a bug where selecting images in grouped mode would trigger erratic scrolling behavior.",
                     },
                 ],
             },
