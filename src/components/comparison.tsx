@@ -38,6 +38,8 @@ const comparison: ComparisonFeature[] = [
         category: "Professional Tools",
         features: [
             { name: "Focus Peaking (Sharpness Check)", free: false, pro: true },
+            { name: "AI Face Detection (Sharpness Check)", free: false, pro: true },
+            { name: "Exposure Warnings (Clipping)", free: false, pro: true },
             { name: "Compare View (Side-by-Side)", free: false, pro: true },
             { name: "Zoom Sync (Locked Pan/Zoom)", free: false, pro: true },
             { name: "Burst Stacking (Group similar shots)", free: false, pro: true },
@@ -47,8 +49,9 @@ const comparison: ComparisonFeature[] = [
         category: "Organization",
         features: [
             { name: "Custom Move/Copy Buckets", free: "Max 3", pro: "Unlimited" },
-            { name: "Star Ratings & Color Labels", free: false, pro: true },
-            { name: "Filter by Rating / Label", free: false, pro: true },
+            { name: "Star Ratings & Color Labels", free: true, pro: true },
+            { name: "Filter by Rating / Label", free: true, pro: true },
+            { name: "Group By Camera/Lens/ISO", free: false, pro: true },
             { name: "Advanced EXIF Filter (Lens/ISO)", free: false, pro: true },
         ]
     },
@@ -57,6 +60,7 @@ const comparison: ComparisonFeature[] = [
         features: [
             { name: "XMP Sidecar Export (Lightroom/C1)", free: false, pro: true },
             { name: "Batch Rename (Prefix + Sequential)", free: false, pro: true },
+            { name: "External Editor Integration", free: false, pro: true },
             { name: "Full EXIF Data Panel", free: "Basic", pro: "Full" },
             { name: "100% Offline Performance", free: true, pro: true },
         ]

@@ -39,6 +39,7 @@ export function Pricing() {
                                     "Blazing Fast JPG/PNG Viewer",
                                     "Standard Zoom & Pan",
                                     "Flag (Pick) & Reject",
+                                    "Star Ratings & Color Labels",
                                     "Manual Move/Copy"
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-center gap-3">
@@ -54,11 +55,11 @@ export function Pricing() {
                                     </div>
                                     <span className="text-neutral-500">No RAW Support</span>
                                 </li>
-                                <li className="flex items-center gap-3 opacity-50">
+                                <li className="flex items-center gap-3">
                                     <div className="rounded-full bg-neutral-100 dark:bg-neutral-800 p-1">
-                                        <X className="h-3 w-3 text-neutral-500" />
+                                        <Check className="h-3 w-3 text-neutral-900 dark:text-white" />
                                     </div>
-                                    <span className="text-neutral-500">Max 2 Buckets</span>
+                                    <span className="text-neutral-600 dark:text-neutral-300">Max 3 Buckets</span>
                                 </li>
                             </ul>
                             <a href="#" className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-neutral-200 dark:border-neutral-800 bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-800 h-12 px-8">
@@ -88,7 +89,8 @@ export function Pricing() {
                             <ul className="space-y-4 mb-8 flex-1">
                                 {[
                                     "Native RAW + HEIC Support",
-                                    "Advanced EXIF Filtering (Lens, ISO)",
+                                    "Advanced EXIF Filtering & Grouping",
+                                    "AI-Powered Face Detection",
                                     "Unlimited Workflow Presets",
                                     "Zoom Sync & Focus Peaking",
                                     "XMP Sidecar Export (Lightroom)",

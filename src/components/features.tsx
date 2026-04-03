@@ -60,6 +60,11 @@ const featureGroups = [
                 icon: Layers,
                 title: "Side-by-Side Zoom Sync",
                 description: "Perfect A/B testing. Compare two similar shots side-by-side with locked zoom and pan to pick the absolute best frame.",
+            },
+            {
+                icon: Zap, // Using Zap or maybe a more appropriate one like Focus later
+                title: "AI-Powered Face Detection",
+                description: "Instantly verify focus where it matters most. SnapCuller automatically detects faces and provides high-resolution crops for instant sharpness verification.",
             }
         ]
     }

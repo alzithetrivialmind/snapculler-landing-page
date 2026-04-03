@@ -7,9 +7,101 @@ import { SEO } from "@/components/seo"
 
 const releases = [
     {
+        version: "1.1.4",
+        date: "2026-04-03",
+        latest: true,
+        sections: [
+            {
+                title: "What's New",
+                icon: Rocket,
+                items: [
+                    {
+                        label: "Professional IPTC Expansion",
+                        description: "Added 5 new Adobe-standard fields (Document Title, Author Title, etc.) for a total of 10 supported fields.",
+                    },
+                    {
+                        label: "Unified IPTC Editor",
+                        description: "Single and Batch editors now share a unified design with Live Preview and Drafting logic.",
+                    },
+                    {
+                        label: "Rotate Support",
+                        description: "New hotkeys '[' and ']' to rotate images instantly in Single and Compare views.",
+                    },
+                    {
+                        label: "Code Replacements Export",
+                        description: "Export your custom dictionary as a .tsv file for easy backup or sharing.",
+                    },
+                ],
+            },
+            {
+                title: "Technical Refactoring",
+                icon: Sparkles,
+                items: [
+                    {
+                        label: "Modular Architecture",
+                        description: "Complete refactor of App.tsx into 17+ domain-specialized hooks for extreme performance and stability.",
+                    },
+                    {
+                        label: "Zero-Error Status",
+                        description: "Achieved absolute TypeScript stability with zero errors across the entire codebase.",
+                    },
+                ],
+            },
+            {
+                title: "Bug Fixes",
+                icon: Bug,
+                items: [
+                    {
+                        label: "EXIF Toggle Crash",
+                        description: "Resolved a critical TypeError when toggling metadata info in the sidebar.",
+                    },
+                    {
+                        label: "Filter Synchronization",
+                        description: "Metadata filters (Camera, Lens, ISO) are now 100% synced between Sidebar and Grid views.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        version: "1.1.3",
+        date: "2026-03-31",
+        latest: false,
+        sections: [
+            {
+                title: "What's New",
+                icon: Rocket,
+                items: [
+                    {
+                        label: "AI Face Detection (Pro)",
+                        description: "Multi-pass grid tiling dramatically improves detection accuracy on high-resolution 50MP+ photos.",
+                    },
+                    {
+                        label: "Batch IPTC Editor",
+                        description: "New professional bulk tagging modal with macro expansion support ({filename}, {date}, etc.).",
+                    },
+                    {
+                        label: "Refined Grid Filtering",
+                        description: "Advanced Camera/Lens/ISO filters moved to the top bar for faster access and visibility.",
+                    },
+                ],
+            },
+            {
+                title: "Improved Features",
+                icon: Sparkles,
+                items: [
+                    {
+                        label: "RAW Preview Overhaul",
+                        description: "Enhanced SubIFD extraction logic for pixel-perfect previews across ARW, CR2, and NEF.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
         version: "1.1.2",
         date: "2026-03-30",
-        latest: true,
+        latest: false,
         sections: [
             {
                 title: "What's New",
