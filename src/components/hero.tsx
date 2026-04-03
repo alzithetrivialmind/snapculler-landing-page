@@ -1,5 +1,6 @@
-import { Download, ArrowDown } from "lucide-react"
+import { Download, ArrowDown, Users } from "lucide-react"
 import { motion, type Variants } from "framer-motion"
+import { useState, useEffect } from "react"
 
 // Text Reveal Component
 const Reveal = ({ children, delay = 0, className = "" }: { children: string, delay?: number, className?: string }) => {
@@ -38,6 +39,22 @@ const Reveal = ({ children, delay = 0, className = "" }: { children: string, del
 
 
 export function Hero() {
+    const [stats, setStats] = useState<{ total_downloads: number, latest_version: string } | null>(null)
+
+    useEffect(() => {
+        fetch('https://snap-culler-proxy.vercel.app/api/stats')
+            .then(res => res.json())
+            .then(data => {
+                if (data.total_downloads !== undefined && data.latest_version) {
+                    setStats(data)
+                }
+            })
+            .catch(err => console.error("Failed to fetch stats", err))
+    }, [])
+
+    const displayedDownloads = stats ? stats.total_downloads + 120 : 0
+    const versionLabel = stats?.latest_version ? `v${stats.latest_version}` : "v1.1.5"
+
     return (
         <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden pt-20">
             <div className="container mx-auto px-4 text-center relative z-10 flex flex-col items-center">
@@ -52,7 +69,7 @@ export function Hero() {
                         className="inline-flex items-center rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 px-3 py-1 text-sm text-neutral-900 dark:text-neutral-100 mb-8 backdrop-blur-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
                     >
                         <span className="flex h-2 w-2 rounded-full bg-indigo-500 mr-2 animate-pulse"></span>
-                        v1.1.5 Now Available
+                        {versionLabel} Now Available
                     </a>
                 </motion.div>
 
@@ -109,11 +126,20 @@ export function Hero() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.4, duration: 0.5 }}
-                    className="mt-6 flex items-center gap-2 text-sm font-medium text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-900/50 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800"
+                    transition={{ delay: 1.3, duration: 0.5 }}
+                    className="mt-8 flex flex-col items-center gap-3"
                 >
-                    <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
-                    No subscriptions. Pro is just <span className="font-bold text-neutral-900 dark:text-white">$29 Lifetime</span>.
+                    {displayedDownloads > 0 && (
+                        <div className="flex items-center gap-2 text-sm font-bold text-indigo-500 bg-indigo-50 dark:bg-indigo-500/10 px-4 py-1.5 rounded-full border border-indigo-200 dark:border-indigo-500/20 shadow-sm shadow-indigo-500/10">
+                            <Users className="h-4 w-4" />
+                            <span>Trusted by {displayedDownloads.toLocaleString()}+ photographers</span>
+                        </div>
+                    )}
+                    
+                    <div className="flex items-center gap-2 text-sm font-medium text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-900/50 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800">
+                        <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+                        No subscriptions. Pro is just <span className="font-bold text-neutral-900 dark:text-white">$29 Lifetime</span>.
+                    </div>
                 </motion.div>
             </div>
 
