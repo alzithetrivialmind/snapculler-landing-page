@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import { useEffect } from "react"
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { ThemeProvider } from "@/components/theme-provider"
 import Layout from "@/components/layout"
 import { Hero } from "@/components/hero"
@@ -69,6 +71,8 @@ function App() {
           <Route path="/terms" element={<TermsPage />} />
         </Routes>
       </BrowserRouter>
+      <Analytics />
+      <SpeedInsights />
     </ThemeProvider>
   )
 }
