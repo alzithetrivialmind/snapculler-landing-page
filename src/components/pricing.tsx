@@ -1,12 +1,15 @@
-import { Check, X, Users } from "lucide-react"
+import { Check, X, Users, Monitor, Apple } from "lucide-react"
 import { motion } from "framer-motion"
 import Tilt from 'react-parallax-tilt'
 import { useState, useEffect } from "react"
+import { detectOS, type OS } from "../utils/os"
 
 export function Pricing() {
     const [stats, setStats] = useState<{ total_downloads: number, latest_version: string } | null>(null)
+    const [os, setOS] = useState<OS>("win")
 
     useEffect(() => {
+        setOS(detectOS())
         fetch('https://snap-culler-proxy.vercel.app/api/stats')
             .then(res => res.json())
             .then(data => {
@@ -17,7 +20,14 @@ export function Pricing() {
             .catch(err => console.error("Failed to fetch stats", err))
     }, [])
 
-    const displayedDownloads = stats ? stats.total_downloads + 120 : 120
+    const displayedDownloads = stats ? stats.total_downloads + 500 : 500
+    const version = stats?.latest_version || "1.1.5"
+    const platformName = os === 'mac' ? 'macOS' : 'Windows'
+    const fileName = os === 'mac' 
+        ? `SnapCuller-${version}.dmg` 
+        : `SnapCuller-Setup-${version}.exe`
+    const downloadUrl = `https://snap-culler-proxy.vercel.app/${fileName}`
+    const PlatformIcon = os === 'mac' ? Apple : Monitor
 
     return (
         <section id="pricing" className="py-24 relative overflow-hidden">
@@ -79,8 +89,12 @@ export function Pricing() {
                                 </li>
                             </ul>
                             <div className="space-y-4">
-                                <a href="#" className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-neutral-200 dark:border-neutral-800 bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-800 h-12 px-8">
-                                    Download Free
+                                <a 
+                                    href={downloadUrl} 
+                                    className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-neutral-200 dark:border-neutral-800 bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-800 h-12 px-8 gap-2"
+                                >
+                                    <PlatformIcon className="h-4 w-4" />
+                                    Download for {platformName}
                                 </a>
                                 <div className="flex items-center justify-center gap-2 text-xs font-semibold text-indigo-500/80 dark:text-indigo-400/80 uppercase tracking-wider">
                                     <Users className="h-3.5 w-3.5" />

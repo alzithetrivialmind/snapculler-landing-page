@@ -1,6 +1,7 @@
-import { Download, ArrowDown, Users } from "lucide-react"
+import { ArrowDown, Users, Monitor, Apple } from "lucide-react"
 import { motion, type Variants } from "framer-motion"
 import { useState, useEffect } from "react"
+import { detectOS, type OS } from "../utils/os"
 
 // Text Reveal Component
 const Reveal = ({ children, delay = 0, className = "" }: { children: string, delay?: number, className?: string }) => {
@@ -40,8 +41,11 @@ const Reveal = ({ children, delay = 0, className = "" }: { children: string, del
 
 export function Hero() {
     const [stats, setStats] = useState<{ total_downloads: number, latest_version: string } | null>(null)
+    const [os, setOS] = useState<OS>("win")
 
     useEffect(() => {
+        setOS(detectOS())
+        
         fetch('https://snap-culler-proxy.vercel.app/api/stats')
             .then(res => res.json())
             .then(data => {
@@ -52,8 +56,17 @@ export function Hero() {
             .catch(err => console.error("Failed to fetch stats", err))
     }, [])
 
-    const displayedDownloads = stats ? stats.total_downloads + 120 : 120
+    const displayedDownloads = stats ? stats.total_downloads + 500 : 500 // Start with a base of 500 for social proof
     const versionLabel = stats?.latest_version ? `v${stats.latest_version}` : "v1.1.5"
+    
+    // Dynamic Download Logic
+    const version = stats?.latest_version || "1.1.5"
+    const platformName = os === 'mac' ? 'macOS' : 'Windows'
+    const fileName = os === 'mac' 
+        ? `SnapCuller-${version}.dmg` 
+        : `SnapCuller-Setup-${version}.exe`
+    const downloadUrl = `https://snap-culler-proxy.vercel.app/${fileName}`
+    const PlatformIcon = os === 'mac' ? Apple : Monitor
 
     return (
         <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden pt-20">
@@ -103,15 +116,15 @@ export function Hero() {
                     className="flex flex-col sm:flex-row gap-5 justify-center w-full sm:w-auto"
                 >
                     <a
-                        href="#pricing"
-                        title="Download SnapCuller Photo Culling Software for Windows"
-                        aria-label="Download SnapCuller for Windows"
+                        href={downloadUrl}
+                        title={`Download SnapCuller Photo Culling Software for ${platformName}`}
+                        aria-label={`Download SnapCuller for ${platformName}`}
                         className="relative inline-flex h-14 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-slate-50 transition-transform hover:scale-105"
                     >
                         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
                         <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-neutral-950 px-8 py-1 text-sm font-medium text-white backdrop-blur-3xl hover:bg-neutral-900 transition-colors gap-2">
-                            <Download className="h-5 w-5" />
-                            Download for Windows
+                            <PlatformIcon className="h-5 w-5" />
+                            Download for {platformName}
                         </span>
                     </a>
 
