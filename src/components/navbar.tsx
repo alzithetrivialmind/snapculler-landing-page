@@ -1,5 +1,5 @@
 import { Menu, X, ArrowRight } from "lucide-react"
-import { ModeToggle } from "@/components/mode-toggle"
+
 import { ThemeLogo } from "@/components/theme-logo"
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion"
 import { useState } from "react"
@@ -57,7 +57,7 @@ export function Navbar() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                    {/* <ModeToggle /> */}
+
                     <a
                         href="/#pricing"
                         className="hidden md:inline-flex items-center justify-center h-10 px-6 rounded-xl bg-primary text-primary-foreground text-xs font-bold hover:scale-105 transition-all shadow-[0_0_15px_rgba(185,124,221,0.3)]"
