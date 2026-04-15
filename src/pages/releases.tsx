@@ -7,9 +7,52 @@ import { SEO } from "@/components/seo"
 
 const releases = [
     {
+        version: "1.1.8",
+        date: "2026-04-15",
+        latest: true,
+        sections: [
+            {
+                title: "What's New",
+                icon: Rocket,
+                items: [
+                    {
+                        label: "Comprehensive Branding Refresh",
+                        description: "Successfully transitioned to an official, custom visual identity. The application now features the new aperture-inspired logo across all touchpoints.",
+                    },
+                    {
+                        label: "Quad-Theme System",
+                        description: "Expanded customization with four distinct, professionally curated themes: Snap Black (Signature), Snap Indigo, Classic Dark, and Light.",
+                    },
+                    {
+                        label: "Horizontal Logotype Layout",
+                        description: "Refined branding placement in the Sidebar, Splash Screen, and About Modal using a sleek horizontal alignment (side-by-side logo and text).",
+                    },
+                    {
+                        label: "Legally Safe Typography",
+                        description: "Migrated all branding to high-quality, free Google Fonts (Outfit and Urbanist) to ensure perfect consistency and 100% legal compliance.",
+                    },
+                ],
+            },
+            {
+                title: "Improvements",
+                icon: Sparkles,
+                items: [
+                    {
+                        label: "Splash Screen Redesign",
+                        description: "A modern, horizontal startup experience with refined typography and a theme-aware animated loading bar.",
+                    },
+                    {
+                        label: "Improved Alignment",
+                        description: "Perfected the vertical centering and spacing of branding elements across the entire UI.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
         version: "1.1.7",
         date: "2026-04-05",
-        latest: true,
+        latest: false,
         sections: [
             {
                 title: "What's New",
