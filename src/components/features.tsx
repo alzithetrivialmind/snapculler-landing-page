@@ -129,7 +129,7 @@ function FeatureSection({ feature, index }: { feature: any, index: number }) {
           className="flex-1 max-w-xl"
         >
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shadow-[0_0_15px_rgba(185,124,221,0.15)]">
+            <div className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center shadow-lg shadow-primary/10">
                 {feature.icon}
             </div>
             <div className="h-[1px] w-8 bg-border" />
@@ -138,7 +138,7 @@ function FeatureSection({ feature, index }: { feature: any, index: number }) {
             </span>
           </div>
           
-          <h3 className="text-4xl md:text-6xl font-black mb-8 tracking-tightest leading-[0.95]">
+          <h3 className="text-4xl md:text-6xl font-brand font-black mb-8 tracking-tighter leading-[0.95]">
             {feature.title}
           </h3>
           
@@ -156,7 +156,7 @@ function FeatureSection({ feature, index }: { feature: any, index: number }) {
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true, amount: "all" }}
                     transition={{ duration: 1.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    className={`absolute inset-0 ${index % 2 === 0 ? 'bg-primary shadow-[0_0_15px_rgba(185,124,221,0.5)]' : 'bg-accent shadow-[0_0_15px_rgba(72,105,207,0.5)]'} origin-left`} 
+                    className={`absolute inset-0 ${index % 2 === 0 ? 'bg-primary shadow-sm shadow-primary/50' : 'bg-accent shadow-sm shadow-accent/50'} origin-left`} 
                   />
               </div>
           </div>
@@ -213,14 +213,14 @@ function SmallFeature({ icon, title, description }: { icon: any, title: string, 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-10 rounded-[2.5rem] glass hover:bg-muted/50 transition-all group border border-border hover:border-primary/30"
+            className="p-10 rounded-[2.5rem] bg-card hover:bg-card/80 transition-all group border border-border hover:border-primary/30"
         >
-            <div className="mb-8 transform group-hover:rotate-6 transition-transform">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shadow-[0_0_20px_rgba(185,124,221,0.1)]">
+            <div className="mb-8 transform group-hover:scale-105 transition-transform">
+                <div className="w-16 h-16 rounded-full bg-background border border-border flex items-center justify-center shadow-lg shadow-primary/5">
                     {icon}
                 </div>
             </div>
-            <h4 className="text-2xl font-black mb-4 tracking-tightest">{title}</h4>
+            <h4 className="text-2xl font-black mb-4 tracking-tighter">{title}</h4>
             <p className="text-muted-foreground leading-relaxed font-medium">
                 {description}
             </p>

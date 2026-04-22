@@ -2,59 +2,42 @@
 
 Informasi mengenai color palette dan tipografi yang digunakan dalam aplikasi SnapCuller.
 
-## 🎨 Color Palette
+## 🎨 Color Palette (Dark First Design)
 
-SnapCuller menggunakan sistem warna berbasis CSS Variables (HSL) yang mendukung berbagai tema.
+SnapCuller menggunakan sistem warna berbasis CSS Variables (HSL) yang mengutamakan tema "Dark First". Semua warna digunakan sebagai aksen dengan background near-black.
 
-### 1. Light Theme (Clean Professional - TEMPORARILY DISABLED)
-- **Background**: `hsl(0, 0%, 100%)` (Pure White)
-- **Foreground**: `hsl(240, 10%, 3.9%)` (Dark Gray)
-- **Primary**: `hsl(289, 63%, 55%)` (Vibrant Violet)
-- **Secondary**: `hsl(240, 4.8%, 95.9%)` (Soft Gray)
-- **Accent**: `hsl(227, 60%, 55%)` (Indigo Blue)
-- **Border**: `hsl(240, 5.9%, 90%)`
+### 1. Dark First (Concierge.ai Style - DEFAULT)
+*Estetika "Premium Dark" yang dirancang untuk kontras tinggi dan kesan modern.*
+- **Background**: `hsl(240, 6%, 6%)` (Near Black: #0e0e11)
+- **Foreground**: `hsl(0, 0%, 96%)` (Off White)
+- **Primary**: `hsl(75, 100%, 50%)` (Absolute Lime - #b3ff00)
+- **Secondary**: `hsl(186, 100%, 50%)` (Abstract Cyan - #00e5ff)
+- **Accent 1**: `hsl(42, 100%, 50%)` (Gold - #ffb300)
+- **Accent 2**: `hsl(172, 100%, 37%)` (Mid Teal - #00bfa5)
+- **Card/Glass**: Latar belakang kartu menggunakan efek *glassmorphism* transparan atau *near black* yang sedikit lebih terang (`hsl(240, 6%, 8%)`).
+- **Border**: Sangat tipis dan subtle (`hsl(240, 5%, 12%)`).
 
-### 2. Snap Indigo (Premium Deep Night - DEFAULT)
-*Estetika "Premium Night" yang dirancang untuk kenyamanan mata fotografer.*
-- **Background**: `hsl(240, 50%, 3%)` (Deep Indigo Black)
-- **Foreground**: `hsl(240, 10%, 96%)` (Ghost White)
-- **Primary**: `hsl(289, 63%, 68%)` (Orchid / Violet)
-- **Secondary**: `hsl(240, 30%, 12%)` (Dark Navy - Used for backgrounds)
-- **Accent**: `hsl(227, 60%, 55%)` (Indigo Blue - Used for visibility/icons)
-- **Muted**: `hsl(240, 25%, 18%)`
-- **Card**: `hsl(240, 40%, 6%)`
-- **Glass**: `rgba(255, 255, 255, 0.05)`
-
-### 3. Brand Gradient
-Digunakan untuk elemen hero, CTA, dan aksen premium.
-- **Direction**: `to bottom / to right`
-- **Colors**: `from-primary/10 to-transparent` or `from-primary to-accent`
+### 2. Dual Gradient Icons & Accents
+Digunakan untuk ikon dan elemen interaktif untuk menciptakan efek kedalaman.
+- Menggabungkan Lime + Gold atau Cyan + Teal dalam gradien SVG vertikal.
 
 ---
 
-## 🔡 Typography
+## 🔡 Typography (Contrast Scaling)
 
-Kombinasi tiga font premium dari Google Fonts untuk menciptakan tampilan yang modern dan profesional:
+Kombinasi font untuk menciptakan tampilan "high-fashion" editorial dan keterbacaan tinggi.
 
 | Brand / Class | Font Family | Peran & Penggunaan |
 | :--- | :--- | :--- |
-| **font-brand** / **font-outfit** | `Outfit` | **Branding/Header**: Digunakan untuk judul (headers), branding, dan UI utama yang ditonjolkan. |
-| **font-urbanist** | `Urbanist` | **Headline/Aksen**: Font geometris sekunder yang elegan untuk elemen desain estetika tinggi. |
-| **font-sans** | `Inter` | **UI/Konten**: Default sistem untuk keterbacaan tinggi pada teks panjang dan label metadata. |
+| **font-brand** / **font-outfit** | `Instrument Serif` atau `Playfair Display` | **Hero Headline**: Digunakan untuk judul besar ("One word per line"). Kontras tajam dan tebal. |
+| **font-sans** | `Inter` atau `DM Sans` | **Prose/Konten**: Digunakan untuk teks deskriptif yang kecil namun mudah dibaca. |
 
-### Konfigurasi Tailwind (v4):
-```css
-@theme {
-  --font-sans: "Inter", sans-serif;
-  --font-brand: "Outfit", sans-serif;
-  --font-outfit: "Outfit", sans-serif;
-  --font-urbanist: "Urbanist", sans-serif;
-}
-```
+*Catatan: Konfigurasi font saat ini masih menggunakan `Outfit` sebagai fallback brand, dan akan diubah ke Serif di masa depan.*
 
 ---
 
 ## ✨ Design Principles
-- **Modern Minimalist**: Penggunaan ruang putih (dan hitam) yang luas.
-- **Glassmorphism**: Beberapa komponen menggunakan efek blur/trasparansi.
-- **Micro-animations**: Respons visual cepat pada interaksi klik dan hover.
+- **Contrast Typography**: Teks headline sangat besar berpadu dengan blok paragraf kecil.
+- **Scroll-jacked Word Reveal**: Kemunculan kata-kata berurutan saat di-scroll untuk menambah *momentum* dramatis.
+- **Single Action Funnel**: CTA point difokuskan pada satu tujuan utama secara jelas (mis. "Get SnapCuller").
+- **Pill Tabs**: Menggunakan bentuk melengkung penuh (`rounded-full`) untuk nav dan tab navigasi fitur.
