@@ -1,7 +1,30 @@
 import { motion } from "framer-motion"
 import { Download, Sparkles } from "lucide-react"
+import { useState, useEffect } from "react"
+import { detectOS, type OS } from "../utils/os"
 
 export function CTA() {
+    const [stats, setStats] = useState<{ latest_version: string } | null>(null)
+    const [os, setOS] = useState<OS>("win")
+
+    useEffect(() => {
+        setOS(detectOS())
+        fetch('https://snap-culler-proxy.vercel.app/api/stats')
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.latest_version) {
+                    setStats(data)
+                }
+            })
+            .catch(err => console.error("Failed to fetch stats", err))
+    }, [])
+
+    const version = stats?.latest_version || "1.1.7"
+    const fileName = os === 'mac' 
+        ? `SnapCuller-${version}.dmg` 
+        : `SnapCuller-Setup-${version}.exe`
+    const downloadUrl = `https://snap-culler-proxy.vercel.app/${fileName}`
+
     return (
         <section className="py-48 relative overflow-hidden rounded-[4rem] mx-6 my-32 lg:mx-12 border border-border shadow-2xl bg-card">
             {/* Immersive Animated Background Blobs */}
@@ -50,18 +73,20 @@ export function CTA() {
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                         <a
-                            href="#pricing"
+                            href={downloadUrl}
                             className="inline-flex h-16 items-center justify-center rounded-2xl bg-white px-12 py-3 text-base font-bold text-black shadow-2xl transition-all hover:scale-105 hover:bg-neutral-50 gap-2 w-full sm:w-auto"
                         >
-                            <Download className="h-6 w-6" />
-                            Download Free Trial
+                            <Download className="h-6 w-12" />
+                            Download Free Forever
                         </a>
                         <a
-                            href="#pricing"
+                            href="https://alzi.gumroad.com/l/snapculler"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-flex h-16 items-center justify-center rounded-2xl border border-border glass-premium px-12 py-3 text-base font-bold text-foreground transition-all hover:bg-foreground/5 hover:scale-105 gap-2 w-full sm:w-auto"
                         >
                             <Sparkles className="h-6 w-6 text-primary" />
-                            Get Pro Early Access
+                            Upgrade to Pro
                         </a>
                     </div>
                 </motion.div>

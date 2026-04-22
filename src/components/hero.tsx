@@ -156,7 +156,7 @@ export function Hero() {
                             className="relative inline-flex h-16 items-center justify-center rounded-2xl btn-primary px-10 py-1 text-base font-bold transition-all hover:scale-105 active:scale-95 group shadow-2xl"
                         >
                             <PlatformIcon className="h-6 w-6 mr-3" />
-                            Download for {platformName}
+                            Download Free for {platformName}
                         </a>
                     </Magnetic>
 
@@ -177,7 +177,7 @@ export function Hero() {
                     transition={{ delay: 1.3, duration: 0.5 }}
                     className="mt-10 mb-20 flex flex-col items-center gap-4"
                 >
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 flex-wrap justify-center">
                         {displayedDownloads > 0 && (
                             <div className="flex items-center gap-2 text-sm font-bold text-primary bg-primary/10 px-5 py-2 rounded-full border border-primary/20 shadow-[0_0_15px_rgba(185,124,221,0.1)] font-urbanist">
                                 <Users className="h-4 w-4" />
@@ -188,10 +188,14 @@ export function Hero() {
                             <Shield className="h-4 w-4" />
                             <span>Privacy First. No Cloud.</span>
                         </div>
+                        <div className="flex items-center gap-2 text-sm font-bold text-neutral-500 bg-neutral-500/10 px-5 py-2 rounded-full border border-neutral-500/20 font-urbanist">
+                            <Zap className="h-4 w-4" />
+                            <span>No Credit Card Required</span>
+                        </div>
                     </div>
                     
                     <div className="flex items-center gap-3 text-sm font-bold glass px-6 py-2.5 rounded-full border border-primary/30 shadow-[0_0_20px_rgba(185,124,221,0.1)] group transition-all hover:border-primary/50">
-                        <span className="text-muted-foreground font-medium">No subscriptions. Pro is just</span>
+                        <span className="text-muted-foreground font-medium">Free forever for basic use. Pro is</span>
                         <span className="text-muted-foreground/50 line-through text-xs tracking-tight">$39</span>
                         <span className="text-2xl text-foreground dark:text-white font-black drop-shadow-[0_0_10px_rgba(185,124,221,0.5)]">$29</span>
                         <span className="bg-primary/20 text-primary text-[10px] px-2 py-0.5 rounded-md tracking-widest uppercase font-black border border-primary/30">Lifetime</span>

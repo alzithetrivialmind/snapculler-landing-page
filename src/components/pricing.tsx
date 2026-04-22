@@ -144,7 +144,7 @@ export function Pricing() {
                                 ))}
                             </ul>
                             <a 
-                                href="https://gumroad.com" 
+                                href="https://alzi.gumroad.com/l/snapculler" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-xl text-base font-bold transition-all hover:scale-[1.02] active:scale-95 btn-primary h-14 px-8 shadow-2xl"
