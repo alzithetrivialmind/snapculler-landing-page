@@ -60,9 +60,9 @@ export function Navbar() {
 
                     <a
                         href="/#pricing"
-                        className="hidden md:inline-flex items-center justify-center h-10 px-6 rounded-full btn-primary text-xs shadow-lg shadow-primary/20"
+                        className="hidden md:inline-flex items-center justify-center h-10 px-6 rounded-xl bg-primary text-primary-foreground text-xs font-bold hover:scale-105 transition-all shadow-[0_0_15px_rgba(185,124,221,0.3)]"
                     >
-                        Download Free
+                        Get Started
                     </a>
                     
                     {/* Mobile Hamburger */}
@@ -122,7 +122,7 @@ export function Navbar() {
                                 onClick={() => setMobileOpen(false)}
                                 className="inline-flex items-center justify-center h-12 rounded-xl bg-primary text-primary-foreground text-sm font-bold hover:scale-105 transition-all shadow-xl"
                             >
-                                Download Free <ArrowRight className="w-4 h-4 ml-2" />
+                                Get Started <ArrowRight className="w-4 h-4 ml-2" />
                             </a>
                         </div>
                     </motion.div>

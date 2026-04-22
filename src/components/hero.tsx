@@ -118,39 +118,31 @@ export function Hero() {
                     </a>
                 </motion.div>
 
-                <div className="mb-14 max-w-5xl relative w-full flex flex-col items-center sm:items-start text-center sm:text-left">
+                <div className="mb-10 max-w-5xl relative">
                     <HUDCrosshair className="-top-12 -left-12 opacity-20" />
                     <HUDCrosshair className="-bottom-12 -right-12 rotate-180 opacity-20" />
                     
-                    <h1 className="text-[12vw] sm:text-7xl md:text-8xl lg:text-[110px] xl:text-[130px] font-brand font-black tracking-[-0.04em] leading-[0.85] mb-8">
+                    <h1 className="text-6xl md:text-8xl lg:text-[110px] font-black tracking-tightest leading-[0.85] mb-6">
                         <span className="sr-only">SnapCuller — The Fastest Photo Culling Software</span>
-                        <Reveal delay={0.1} className="text-foreground block">
-                            Cull
+                        <Reveal delay={0.2} className="text-foreground inline-block">
+                            Cull Photos at
                         </Reveal>
-                        <Reveal delay={0.3} className="text-foreground block opacity-90">
-                            Photos at
-                        </Reveal>
-                        <Reveal delay={0.5} className="text-primary block italic font-serif tracking-widest">
-                            Muscle
-                        </Reveal>
-                        <Reveal delay={0.7} className="text-primary block italic font-serif tracking-widest">
-                            Memory
-                        </Reveal>
-                        <Reveal delay={0.9} className="text-foreground block">
-                            Speed.
+                        <br className="hidden md:block" />
+                        <Reveal delay={0.6} className="text-foreground dark:text-white inline-block whitespace-nowrap">
+                            Muscle Memory Speed
                         </Reveal>
                     </h1>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.1, duration: 0.6 }}
-                        className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed font-medium sm:pl-4 border-l-2 border-primary/30"
-                    >
-                        The ultra-lightweight engine to sort thousands of shots instantly. 
-                        No import lag, ultra-fast viewing, and a workflow that keeps your hands on the keyboard.
-                    </motion.p>
                 </div>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.0, duration: 0.6 }}
+                    className="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto mb-14 leading-relaxed font-medium"
+                >
+                    The ultra-lightweight engine to sort thousands of shots instantly. 
+                    No import lag, ultra-fast viewing, and a workflow that keeps your hands on the keyboard.
+                </motion.p>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -164,7 +156,7 @@ export function Hero() {
                             className="relative inline-flex h-16 items-center justify-center rounded-2xl btn-primary px-10 py-1 text-base font-bold transition-all hover:scale-105 active:scale-95 group shadow-2xl"
                         >
                             <PlatformIcon className="h-6 w-6 mr-3" />
-                            Download Free for {platformName}
+                            Download for {platformName}
                         </a>
                     </Magnetic>
 
@@ -185,7 +177,7 @@ export function Hero() {
                     transition={{ delay: 1.3, duration: 0.5 }}
                     className="mt-10 mb-20 flex flex-col items-center gap-4"
                 >
-                    <div className="flex items-center gap-4 flex-wrap justify-center">
+                    <div className="flex items-center gap-4">
                         {displayedDownloads > 0 && (
                             <div className="flex items-center gap-2 text-sm font-bold text-primary bg-primary/10 px-5 py-2 rounded-full border border-primary/20 shadow-[0_0_15px_rgba(185,124,221,0.1)] font-urbanist">
                                 <Users className="h-4 w-4" />
@@ -196,14 +188,10 @@ export function Hero() {
                             <Shield className="h-4 w-4" />
                             <span>Privacy First. No Cloud.</span>
                         </div>
-                        <div className="flex items-center gap-2 text-sm font-bold text-neutral-500 bg-neutral-500/10 px-5 py-2 rounded-full border border-neutral-500/20 font-urbanist">
-                            <Zap className="h-4 w-4" />
-                            <span>No Credit Card Required</span>
-                        </div>
                     </div>
                     
                     <div className="flex items-center gap-3 text-sm font-bold glass px-6 py-2.5 rounded-full border border-primary/30 shadow-[0_0_20px_rgba(185,124,221,0.1)] group transition-all hover:border-primary/50">
-                        <span className="text-muted-foreground font-medium">Free forever for basic use. Pro is</span>
+                        <span className="text-muted-foreground font-medium">No subscriptions. Pro is just</span>
                         <span className="text-muted-foreground/50 line-through text-xs tracking-tight">$39</span>
                         <span className="text-2xl text-foreground dark:text-white font-black drop-shadow-[0_0_10px_rgba(185,124,221,0.5)]">$29</span>
                         <span className="bg-primary/20 text-primary text-[10px] px-2 py-0.5 rounded-md tracking-widest uppercase font-black border border-primary/30">Lifetime</span>

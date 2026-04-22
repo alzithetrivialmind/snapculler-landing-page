@@ -31,47 +31,30 @@
 @layer base {
   :root {
     /* Dark Theme (Default) */
-    --background: 240 6% 6%; /* Near Black: #0e0e11 */
-    --foreground: 0 0% 96%; /* Off white */
-    --card: 240 6% 8%; /* Slightly lighter than background */
-    --card-foreground: 0 0% 96%;
-    --popover: 240 6% 8%;
-    --popover-foreground: 0 0% 96%;
-    
-    /* Absolute Lime */
-    --primary: 75 100% 50%;
+    --background: 240 50% 3%;
+    --foreground: 240 10% 96%;
+    --card: 240 40% 6%;
+    --card-foreground: 240 10% 96%;
+    --popover: 240 40% 8%;
+    --popover-foreground: 240 10% 96%;
+    --primary: 289 63% 68%;
     --primary-foreground: 240 10% 4%;
-    
-    /* Abstract Cyan for secondary actions */
-    --secondary: 186 100% 50%;
-    --secondary-foreground: 240 10% 4%;
-    
-    --muted: 240 5% 15%;
-    --muted-foreground: 240 5% 65%;
-    
-    /* Accent: Mid Teal or Gold */
-    --accent: 172 100% 37%; /* Mid Teal */
-    --accent-foreground: 0 0% 96%;
-    
+    --secondary: 240 30% 12%;
+    --secondary-foreground: 240 10% 96%;
+    --muted: 240 25% 18%;
+    --muted-foreground: 240 20% 70%;
+    --accent: 227 60% 55%;
+    --accent-foreground: 240 10% 96%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
+    --border: 240 30% 15%;
+    --input: 240 30% 15%;
+    --ring: 289 63% 68%;
+    --radius: 1.2rem;
     
-    --border: 240 5% 12%; /* Very subtle borders */
-    --input: 240 5% 15%;
-    --ring: 75 100% 50%;
-    
-    /* Concierge Pill-styling preference */
-    --radius: 2.5rem; 
-    
-    --pattern-color: rgba(255, 255, 255, 0.03);
-    --glass-bg: rgba(255, 255, 255, 0.02);
-    --glass-border: rgba(255, 255, 255, 0.06);
-    
-    /* Accents from teardown */
-    --color-lime: 75 100% 50%;
-    --color-cyan: 186 100% 50%;
-    --color-gold: 42 100% 50%;
-    --color-teal: 172 100% 37%;
+    --pattern-color: rgba(185, 124, 221, 0.05);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
   }
 
   .light {
@@ -81,22 +64,22 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 75 100% 35%;
+    --primary: 289 63% 55%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 186 100% 35%;
+    --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 172 100% 30%;
+    --accent: 227 60% 55%;
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 75 100% 35%;
+    --ring: 289 63% 55%;
     
-    --pattern-color: rgba(0, 0, 0, 0.03);
-    --glass-bg: rgba(255, 255, 255, 0.5);
+    --pattern-color: rgba(72, 105, 207, 0.05);
+    --glass-bg: rgba(0, 0, 0, 0.03);
     --glass-border: rgba(0, 0, 0, 0.08);
   }
 
