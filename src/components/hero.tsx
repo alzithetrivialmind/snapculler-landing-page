@@ -179,22 +179,22 @@ export function Hero() {
                 >
                     <div className="flex items-center gap-4 flex-wrap justify-center">
                         {displayedDownloads > 0 && (
-                            <div className="flex items-center gap-2 text-sm font-bold text-primary bg-primary/10 px-5 py-2 rounded-full border border-primary/20 shadow-[0_0_15px_rgba(185,124,221,0.1)] font-urbanist">
+                            <div className="flex items-center gap-2 text-sm font-bold text-primary bg-primary/10 px-5 py-2 rounded-full border border-primary/20 shadow-[0_0_15px_rgba(185,124,221,0.15)] font-urbanist">
                                 <Users className="h-4 w-4" />
                                 <span>Trusted by {displayedDownloads.toLocaleString()}+ photographers</span>
                             </div>
                         )}
-                        <div className="flex items-center gap-2 text-sm font-bold text-secondary bg-secondary/10 px-5 py-2 rounded-full border border-secondary/20 shadow-[0_0_15px_rgba(72,105,207,0.1)] font-urbanist">
+                        <div className="flex items-center gap-2 text-sm font-bold text-accent bg-accent/10 px-5 py-2 rounded-full border border-accent/20 shadow-[0_0_15px_rgba(72,105,207,0.15)] font-urbanist">
                             <Shield className="h-4 w-4" />
                             <span>Privacy First. No Cloud.</span>
                         </div>
-                        <div className="flex items-center gap-2 text-sm font-bold text-neutral-500 bg-neutral-500/10 px-5 py-2 rounded-full border border-neutral-500/20 font-urbanist">
+                        <div className="flex items-center gap-2 text-sm font-bold text-muted-foreground bg-muted/20 px-5 py-2 rounded-full border border-border font-urbanist">
                             <Zap className="h-4 w-4" />
                             <span>No Credit Card Required</span>
                         </div>
                     </div>
                     
-                    <div className="flex items-center gap-3 text-sm font-bold glass px-6 py-2.5 rounded-full border border-primary/30 shadow-[0_0_20px_rgba(185,124,221,0.1)] group transition-all hover:border-primary/50">
+                    <div className="flex items-center gap-3 text-sm font-bold glass px-6 py-2.5 rounded-full border border-primary/30 shadow-[0_0_20px_rgba(185,124,221,0.15)] group transition-all hover:border-primary/50">
                         <span className="text-muted-foreground font-medium">Free forever for basic use. Pro is</span>
                         <span className="text-muted-foreground/50 line-through text-xs tracking-tight">$39</span>
                         <span className="text-2xl text-foreground dark:text-white font-black drop-shadow-[0_0_10px_rgba(185,124,221,0.5)]">$29</span>
