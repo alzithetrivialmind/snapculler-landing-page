@@ -500,6 +500,27 @@ export function DocsPage() {
                                         <img src="/assets/screenshots/Bucket For Move or Copy Pictures.png" alt="Bucket Configuration" className="w-full h-auto rounded-2xl" />
                                     </div>
                                 </div>
+
+                                <div className="p-8 rounded-3xl bg-primary/5 border border-primary/20 shadow-sm">
+                                    <h3 className="text-2xl font-black mb-4 text-primary">Selective RAW Keeping</h3>
+                                    <p className="text-base leading-relaxed text-neutral-600 dark:text-neutral-400 mb-6">
+                                        The ultimate storage optimization tool. Professional shoots can generate hundreds of gigabytes of RAW data. Selective RAW Keeping allows you to automate your cleanup.
+                                    </p>
+                                    <ul className="space-y-3 list-none p-0">
+                                        <li className="flex gap-3 text-sm">
+                                            <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                                            <span>Set a rating threshold (e.g., 4 Stars).</span>
+                                        </li>
+                                        <li className="flex gap-3 text-sm">
+                                            <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                                            <span>During export, SnapCuller skips the heavy RAW files for photos below that threshold.</span>
+                                        </li>
+                                        <li className="flex gap-3 text-sm">
+                                            <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                                            <span>You keep a lightweight JPG archive for all shots, but only the keepers occupy your RAW storage.</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </section>
 

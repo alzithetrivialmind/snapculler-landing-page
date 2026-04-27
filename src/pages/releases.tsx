@@ -18,6 +18,10 @@ const releases = [
                         description: "A complete rewrite of the user guide and landing page documentation, featuring 9 chapters of detailed workflow recipes and professional troubleshooting.",
                     },
                     {
+                        label: "Selective RAW Keeping",
+                        description: "Save massive disk space by automatically filtering out RAW files for lower-rated photos during export while keeping both for your 'keepers'.",
+                    },
+                    {
                         label: "IPTC Template Workflow",
                         description: "Refined naming conventions in the sidebar to better distinguish template creation from per-image editing.",
                     },
