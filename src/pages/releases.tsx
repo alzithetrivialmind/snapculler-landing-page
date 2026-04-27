@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Rocket, Sparkles } from "lucide-react"
+import { Rocket, Sparkles, Tag, ArrowLeft } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ScrollProgress } from "@/components/scroll-progress"
@@ -261,8 +261,8 @@ const releases = [
 export function ReleasesPage() {
     return (
         <div className="min-h-screen bg-background text-foreground">
-            <SEO 
-                title="Releases & Version History" 
+            <SEO
+                title="Releases & Version History"
                 description="Stay updated with the latest SnapCuller features, performance improvements, and bug fixes. View our version history and changelog."
                 keywords="SnapCuller releases, photo culling updates, software version history, changelog"
             />
