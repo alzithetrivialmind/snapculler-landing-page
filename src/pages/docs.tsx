@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { SEO } from "@/components/seo"
 import Layout from "@/components/layout"
 import { motion } from "framer-motion"
@@ -37,8 +37,29 @@ const docSections = [
 export function DocsPage() {
     const [activeSection, setActiveSection] = useState("philosophy")
 
+    useEffect(() => {
+        const options = {
+            rootMargin: '-150px 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        }, options);
+
+        docSections.forEach((section) => {
+            const element = document.getElementById(section.id);
+            if (element) observer.observe(element);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
     const scrollToSection = (id: string) => {
-        setActiveSection(id)
         const element = document.getElementById(id)
         if (element) {
             const y = element.getBoundingClientRect().top + window.scrollY - 100
@@ -62,9 +83,9 @@ export function DocsPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <div className="flex items-center gap-2 mb-4">
-                            <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">Official Guide</span>
-                            <span className="text-neutral-400 text-xs font-medium">Last Updated: April 27, 2026</span>
+                        <div className="flex items-center gap-3 mb-8">
+                            <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-[0.2em] border border-primary/20">Official Guide</span>
+                            <span className="text-neutral-500 text-xs font-medium opacity-60">v1.2.0 • Updated April 2026</span>
                         </div>
                         <h1 className="text-4xl md:text-6xl font-black tracking-tightest mb-6">
                             SnapCuller <span className="text-gradient">Comprehensive Docs</span>
@@ -78,7 +99,7 @@ export function DocsPage() {
                 <div className="flex flex-col lg:flex-row gap-16">
                     {/* Sidebar Navigation */}
                     <aside className="lg:w-72 shrink-0">
-                        <div className="sticky top-28">
+                        <div className="sticky top-28 space-y-6">
                             <div className="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 mb-6">
                                 <h3 className="font-black text-xs uppercase tracking-widest mb-4 text-neutral-900 dark:text-white px-2">Table of Contents</h3>
                                 <nav className="flex flex-col space-y-1">
@@ -99,13 +120,15 @@ export function DocsPage() {
                                 </nav>
                             </div>
 
-                            <div className="p-5 rounded-2xl bg-brand-gradient border border-primary/20">
-                                <h4 className="font-bold text-sm mb-2 text-primary">Need Help?</h4>
-                                <p className="text-xs text-neutral-600 dark:text-neutral-400 mb-4 leading-relaxed">
-                                    Can't find what you're looking for? Reach out to our support team.
+                            <div className="p-5 rounded-2xl bg-brand-gradient border border-primary/20 glass-hud">
+                                <h4 className="font-black text-sm mb-2 text-primary flex items-center gap-2">
+                                    <HelpCircle className="w-4 h-4" /> Need Help?
+                                </h4>
+                                <p className="text-xs text-neutral-600 dark:text-neutral-400 mb-4 leading-relaxed font-medium">
+                                    Can't find what you're looking for? Reach out to our support team for specialized assistance.
                                 </p>
-                                <a href="mailto:support@snapculler.com" className="text-xs font-black uppercase tracking-wider text-neutral-900 dark:text-white flex items-center gap-2 hover:gap-3 transition-all">
-                                    Contact Support <ArrowRight className="w-3 h-3" />
+                                <a href="mailto:support@snapculler.com" className="text-xs font-black uppercase tracking-widest text-neutral-900 dark:text-white flex items-center gap-2 hover:gap-3 transition-all text-primary group">
+                                    Contact Support <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                                 </a>
                             </div>
                         </div>

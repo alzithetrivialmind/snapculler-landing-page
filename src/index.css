@@ -97,6 +97,10 @@
     font-family: var(--font-brand);
     letter-spacing: -0.05em;
   }
+
+  kbd {
+    @apply px-2 py-1 rounded-md border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white font-mono text-[10px] md:text-xs font-black shadow-[0_2px_0_0_rgba(0,0,0,0.2)] dark:shadow-[0_2px_0_0_rgba(255,255,255,0.1)] inline-flex items-center justify-center min-w-[20px] transition-all align-baseline mx-0.5;
+  }
 }
 
 @utility bg-grid-hud {
@@ -154,4 +158,8 @@
 
 @utility btn-secondary {
   @apply bg-transparent text-foreground border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 cursor-pointer;
-}
+}
+
+@utility kbd {
+  @apply px-2 py-1 rounded-md border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white font-mono text-xs font-black shadow-[0_2px_0_0_rgba(0,0,0,0.2)] dark:shadow-[0_2px_0_0_rgba(255,255,255,0.1)] inline-flex items-center justify-center min-w-[24px] transition-all align-baseline;
+}
