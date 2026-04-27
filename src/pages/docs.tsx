@@ -219,56 +219,71 @@ export function DocsPage() {
 
                         <div id="shortcuts" className="scroll-mt-28 mb-20">
                             <h2>Quick Reference</h2>
-                            <table className="text-sm">
-                                <thead>
-                                    <tr>
-                                        <th>Category</th>
-                                        <th>Action</th>
-                                        <th>Shortcut</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td rowSpan={2} className="font-bold">Views</td>
-                                        <td>Grid View</td>
-                                        <td><kbd>G</kbd></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Compare Mode</td>
-                                        <td><kbd>C</kbd></td>
-                                    </tr>
-                                    <tr>
-                                        <td rowSpan={3} className="font-bold">Analysis</td>
-                                        <td>Focus Peaking</td>
-                                        <td><kbd>Shift</kbd> + <kbd>P</kbd></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Exposure Zebras</td>
-                                        <td><kbd>J</kbd></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Toggle Zoom</td>
-                                        <td><kbd>Space</kbd> or <kbd>Double-Click</kbd></td>
-                                    </tr>
-                                    <tr>
-                                        <td rowSpan={4} className="font-bold">Culling</td>
-                                        <td>Flag Pick / Reject</td>
-                                        <td><kbd>P</kbd> / <kbd>X</kbd></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Open in Editor</td>
-                                        <td><kbd>E</kbd></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Edit IPTC</td>
-                                        <td><kbd>I</kbd></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Face Panel</td>
-                                        <td><kbd>F</kbd></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div className="not-prose overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/50 backdrop-blur-sm">
+                                <table className="w-full text-left text-sm border-collapse">
+                                    <thead>
+                                        <tr className="border-b border-neutral-200 dark:border-neutral-800 bg-neutral-100/50 dark:bg-neutral-800/50">
+                                            <th className="py-4 px-6 font-black text-neutral-900 dark:text-neutral-100 uppercase tracking-widest text-[10px]">Category</th>
+                                            <th className="py-4 px-6 font-black text-neutral-900 dark:text-neutral-100 uppercase tracking-widest text-[10px]">Action</th>
+                                            <th className="py-4 px-6 font-black text-neutral-900 dark:text-neutral-100 uppercase tracking-widest text-[10px]">Shortcut</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-neutral-200/50 dark:divide-neutral-800/50">
+                                        {/* Views */}
+                                        <tr>
+                                            <td rowSpan={2} className="py-4 px-6 font-bold text-primary align-top border-r border-neutral-200/50 dark:border-neutral-800/50 bg-primary/5">Views</td>
+                                            <td className="py-4 px-6 text-neutral-700 dark:text-neutral-300">Grid View</td>
+                                            <td className="py-4 px-6"><kbd className="px-2 py-1 rounded bg-neutral-200 dark:bg-neutral-800 font-mono text-xs shadow-sm border border-neutral-300 dark:border-neutral-700">G</kbd></td>
+                                        </tr>
+                                        <tr>
+                                            <td className="py-4 px-6 text-neutral-700 dark:text-neutral-300">Compare Mode</td>
+                                            <td className="py-4 px-6"><kbd className="px-2 py-1 rounded bg-neutral-200 dark:bg-neutral-800 font-mono text-xs shadow-sm border border-neutral-300 dark:border-neutral-700">C</kbd></td>
+                                        </tr>
+
+                                        {/* Analysis */}
+                                        <tr>
+                                            <td rowSpan={3} className="py-4 px-6 font-bold text-accent align-top border-r border-neutral-200/50 dark:border-neutral-800/50 bg-accent/5">Analysis</td>
+                                            <td className="py-4 px-6 text-neutral-700 dark:text-neutral-300">Focus Peaking</td>
+                                            <td className="py-4 px-6"><kbd className="px-2 py-1 rounded bg-neutral-200 dark:bg-neutral-800 font-mono text-xs shadow-sm border border-neutral-300 dark:border-neutral-700">Shift</kbd> + <kbd className="px-2 py-1 rounded bg-neutral-200 dark:bg-neutral-800 font-mono text-xs shadow-sm border border-neutral-300 dark:border-neutral-700">P</kbd></td>
+                                        </tr>
+                                        <tr>
+                                            <td className="py-4 px-6 text-neutral-700 dark:text-neutral-300">Exposure Zebras</td>
+                                            <td className="py-4 px-6"><kbd className="px-2 py-1 rounded bg-neutral-200 dark:bg-neutral-800 font-mono text-xs shadow-sm border border-neutral-300 dark:border-neutral-700">J</kbd></td>
+                                        </tr>
+                                        <tr>
+                                            <td className="py-4 px-6 text-neutral-700 dark:text-neutral-300">Toggle Zoom</td>
+                                            <td className="py-4 px-6">
+                                                <kbd className="px-2 py-1 rounded bg-neutral-200 dark:bg-neutral-800 font-mono text-xs shadow-sm border border-neutral-300 dark:border-neutral-700">Space</kbd> 
+                                                <span className="mx-2 text-neutral-400 text-xs">or</span>
+                                                <span className="text-neutral-500 italic text-xs">Double-Click</span>
+                                            </td>
+                                        </tr>
+
+                                        {/* Culling */}
+                                        <tr>
+                                            <td rowSpan={4} className="py-4 px-6 font-bold text-neutral-900 dark:text-neutral-100 align-top border-r border-neutral-200/50 dark:border-neutral-800/50 bg-neutral-500/5">Culling</td>
+                                            <td className="py-4 px-6 text-neutral-700 dark:text-neutral-300">Flag Pick / Reject</td>
+                                            <td className="py-4 px-6">
+                                                <kbd className="px-2 py-1 rounded bg-neutral-200 dark:bg-neutral-800 font-mono text-xs shadow-sm border border-neutral-300 dark:border-neutral-700">P</kbd>
+                                                <span className="mx-2 text-neutral-400 text-xs">/</span>
+                                                <kbd className="px-2 py-1 rounded bg-neutral-200 dark:bg-neutral-800 font-mono text-xs shadow-sm border border-neutral-300 dark:border-neutral-700">X</kbd>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td className="py-4 px-6 text-neutral-700 dark:text-neutral-300">Open in Editor</td>
+                                            <td className="py-4 px-6"><kbd className="px-2 py-1 rounded bg-neutral-200 dark:bg-neutral-800 font-mono text-xs shadow-sm border border-neutral-300 dark:border-neutral-700">E</kbd></td>
+                                        </tr>
+                                        <tr>
+                                            <td className="py-4 px-6 text-neutral-700 dark:text-neutral-300">Edit IPTC</td>
+                                            <td className="py-4 px-6"><kbd className="px-2 py-1 rounded bg-neutral-200 dark:bg-neutral-800 font-mono text-xs shadow-sm border border-neutral-300 dark:border-neutral-700">I</kbd></td>
+                                        </tr>
+                                        <tr>
+                                            <td className="py-4 px-6 text-neutral-700 dark:text-neutral-300">Face Panel</td>
+                                            <td className="py-4 px-6"><kbd className="px-2 py-1 rounded bg-neutral-200 dark:bg-neutral-800 font-mono text-xs shadow-sm border border-neutral-300 dark:border-neutral-700">F</kbd></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </main>
                 </div>
