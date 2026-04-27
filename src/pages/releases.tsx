@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Rocket, FileText, Sparkles, Bug, Tag, ArrowLeft } from "lucide-react"
+import { Rocket, Sparkles } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ScrollProgress } from "@/components/scroll-progress"
