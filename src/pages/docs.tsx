@@ -97,10 +97,10 @@ export function DocsPage() {
                     </motion.div>
                 </header>
 
-                <div className="flex flex-col lg:flex-row gap-16">
+                <div className="flex flex-col lg:flex-row gap-16 items-start">
                     {/* Sidebar Navigation */}
-                    <aside className="lg:w-72 shrink-0">
-                        <div className="sticky top-28 space-y-6">
+                    <aside className="lg:w-72 shrink-0 sticky top-28 self-start">
+                        <div className="space-y-6">
                             <div className="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 mb-6">
                                 <h3 className="font-black text-xs uppercase tracking-widest mb-4 text-neutral-900 dark:text-white px-2">Table of Contents</h3>
                                 <nav className="flex flex-col space-y-1">
