@@ -20,10 +20,10 @@ export function Hero() {
     }, [])
 
     const displayedDownloads = stats ? stats.total_downloads + 500 : 500
-    const versionLabel = stats?.latest_version ? `v${stats.latest_version}` : "v1.1.7"
+    const versionLabel = stats?.latest_version ? `v${stats.latest_version}` : "v1.2.2"
     
     // Dynamic Download Logic
-    const version = stats?.latest_version || "1.1.7"
+    const version = stats?.latest_version || "1.2.2"
     const platformName = os === 'mac' ? 'macOS' : 'Windows'
     const fileName = os === 'mac' 
         ? `SnapCuller-${version}.dmg` 

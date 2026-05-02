@@ -5,8 +5,8 @@ import { SEO } from "@/components/seo"
 
 const releases = [
     {
-        version: "1.2.1",
-        date: "2026-04-27",
+        version: "1.2.2",
+        date: "2026-04-28",
         latest: true,
         sections: [
             {
@@ -14,16 +14,16 @@ const releases = [
                 icon: Rocket,
                 items: [
                     {
-                        label: "Comprehensive Documentation",
-                        description: "A complete rewrite of the user guide and landing page documentation, featuring 9 chapters of detailed workflow recipes and professional troubleshooting.",
+                        label: "Burst Stacking Overhaul",
+                        description: "A premium Peek overlay, manual stack controls, and smart keyboard navigation for a non-destructive burst exploration workflow.",
                     },
                     {
-                        label: "Selective RAW Keeping",
-                        description: "Save massive disk space by automatically filtering out RAW files for lower-rated photos during export while keeping both for your 'keepers'.",
+                        label: "Grid & Filmstrip Polish",
+                        description: "Static filenames are now always visible, with a redesigned grid engine to prevent label clipping and standardized filmstrip ratios.",
                     },
                     {
-                        label: "IPTC Template Workflow",
-                        description: "Refined naming conventions in the sidebar to better distinguish template creation from per-image editing.",
+                        label: "Export Preferences",
+                        description: "Total control over bucket formats (RAW only, JPG only, or both) and simplified Selective RAW logic for keeper safety.",
                     },
                 ],
             },
@@ -32,21 +32,26 @@ const releases = [
                 icon: Sparkles,
                 items: [
                     {
-                        label: "Stable Image Pairing",
-                        description: "Fixed sorting inconsistencies when toggling RAW+JPG pairing; gallery results now strictly maintain their original folder index.",
+                        label: "Thumbnail Stability",
+                        description: "Resolved black thumbnail issues with automatic retry logic and cancelled request handling.",
                     },
                     {
-                        label: "Adaptive UI Logic",
-                        description: "Intelligently hides redundant tools like the sidebar filter in grid view or the IPTC button during multi-select for a cleaner workspace.",
+                        label: "UI & Code Sanitization",
+                        description: "Fixed flattened thumbnails, settings modal glitches, and achieved zero-error TypeScript status across core hooks.",
                     },
                     {
-                        label: "Premium UI Refinements",
-                        description: "Standardized all sidebar UI elements and micro-alignments for a more cohesive and professional user experience.",
+                        label: "Selective RAW Safety",
+                        description: "Improved logic to ensure RAW companions are strictly preserved for all starred photos during culling.",
                     },
                 ],
             },
         ],
     },
+    {
+        version: "1.2.1",
+        date: "2026-04-27",
+        latest: false,
+        sections: [
     {
         version: "1.2.0",
         date: "2026-04-26",
