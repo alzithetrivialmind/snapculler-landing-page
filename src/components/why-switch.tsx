@@ -1,5 +1,7 @@
-import { motion } from "framer-motion"
-import { DollarSign, Zap, Sparkles, ArrowRight } from "lucide-react"
+import { DollarSign, Zap, Sparkles } from "lucide-react"
+
+const serif = { fontFamily: "'Instrument Serif', serif" };
+const mono = { fontFamily: "'JetBrains Mono', ui-monospace, monospace" };
 
 const competitors = [
     {
@@ -28,7 +30,7 @@ const advantages = [
     },
     {
         icon: Zap,
-        title: "Built for Flow, Not Bloat",
+        title: "Built for Flow",
         description: "SnapCuller does one thing: fast selection. No editing tools, no cloud sync, and no tedious catalog imports. Just instant previews that let you find your best work in seconds.",
         highlight: "Zero Import",
     },
@@ -42,94 +44,50 @@ const advantages = [
 
 export function WhySwitch() {
     return (
-        <section id="why-switch" className="py-24 relative overflow-hidden">
-            {/* Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+        <section id="why-switch" className="mx-auto max-w-6xl px-6 py-24 md:py-32 border-t border-foreground/15">
+            <div
+                className="flex items-center justify-between pt-6 text-[11px] uppercase tracking-[0.2em] text-foreground/60 mb-24"
+                style={mono}
+            >
+                <span>Comparison</span>
+                <span>Why Switch to SnapCuller?</span>
+            </div>
 
-            <div className="container mx-auto px-4 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter">
-                        Why <span className="text-primary">Switch</span> to SnapCuller?
-                    </h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        We respect the tools that came before us. But photographers deserve better.
-                    </p>
-                </motion.div>
-
-                {/* Competitor Pain Points */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-16">
-                    {competitors.map((comp, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
-                            className="p-5 rounded-xl border border-divider bg-card/50 dark:bg-neutral-900/30"
-                        >
-                            <div className="flex items-center justify-between mb-3">
-                                <span className="text-sm font-bold text-foreground">{comp.name}</span>
-                                <span className="text-xs font-bold px-2 py-1 rounded-full bg-muted text-muted-foreground">
-                                    {comp.price}
-                                </span>
-                            </div>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                                {comp.painPoint}
-                            </p>
-                        </motion.div>
-                    ))}
-                </div>
-
-                {/* Arrow transition */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    className="flex justify-center mb-16"
-                >
-                    <div className="flex items-center gap-3 text-muted-foreground">
-                        <div className="h-px w-12 bg-border" />
-                        <ArrowRight className="h-5 w-5 text-primary" />
-                        <span className="text-sm font-bold text-foreground uppercase tracking-wider">
-                            SnapCuller's Approach
-                        </span>
-                        <ArrowRight className="h-5 w-5 text-primary rotate-180 hidden" />
-                        <div className="h-px w-12 bg-border" />
+            {/* Competitor Pain Points */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-12 mb-24">
+                {competitors.map((comp, i) => (
+                    <div key={i} className="flex flex-col border-t border-foreground/15 pt-6">
+                        <div className="flex items-center justify-between mb-6">
+                            <span className="text-xl" style={serif}>{comp.name}</span>
+                            <span className="text-[10px] uppercase tracking-widest px-2 py-1 bg-foreground/5 text-foreground/50" style={mono}>
+                                {comp.price}
+                            </span>
+                        </div>
+                        <p className="text-sm text-foreground/60 leading-relaxed">
+                            {comp.painPoint}
+                        </p>
                     </div>
-                </motion.div>
+                ))}
+            </div>
 
-                {/* SnapCuller Advantages */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                    {advantages.map((adv, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.15 }}
-                            className="relative p-8 rounded-2xl border border-border glass hover:border-primary/30 transition-all duration-300 group"
-                        >
-                            {/* Highlight Badge */}
-                            <div className="absolute -top-3 right-6 px-3 py-1 rounded-full bg-foreground text-background text-xs font-bold shadow-lg">
-                                {adv.highlight}
-                            </div>
+            <div className="h-px w-full bg-foreground/15 mb-24" />
 
-                            <div className="mb-5 inline-flex p-3 rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-300 border border-primary/20">
-                                <adv.icon className="h-6 w-6" />
-                            </div>
-
-                            <h3 className="text-xl font-bold mb-3">{adv.title}</h3>
-                            <p className="text-muted-foreground leading-relaxed text-sm">
-                                {adv.description}
-                            </p>
-                        </motion.div>
-                    ))}
-                </div>
+            {/* SnapCuller Advantages */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16">
+                {advantages.map((adv, i) => (
+                    <div key={i} className="relative flex flex-col items-start group">
+                        <div className="text-[10px] uppercase tracking-widest text-foreground/40 mb-6" style={mono}>
+                            — {adv.highlight}
+                        </div>
+                        <div className="mb-6 text-foreground/40 transition-colors group-hover:text-foreground">
+                            <adv.icon className="h-6 w-6" strokeWidth={1.5} />
+                        </div>
+                        <h3 className="text-2xl md:text-3xl mb-4" style={serif}>{adv.title}</h3>
+                        <p className="text-foreground/70 leading-relaxed text-sm">
+                            {adv.description}
+                        </p>
+                    </div>
+                ))}
             </div>
         </section>
     )

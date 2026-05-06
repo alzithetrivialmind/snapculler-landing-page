@@ -2,6 +2,9 @@ import { Apple, Monitor, Zap, Users, Shield } from "lucide-react"
 import { useState, useEffect } from "react"
 import { detectOS, type OS } from "../utils/os"
 
+const serif = { fontFamily: "'Instrument Serif', serif" };
+const mono = { fontFamily: "'JetBrains Mono', ui-monospace, monospace" };
+
 export function Hero() {
     const [stats, setStats] = useState<{ total_downloads: number, latest_version: string } | null>(null)
     const [os, setOS] = useState<OS>("win")
@@ -29,57 +32,74 @@ export function Hero() {
         ? `SnapCuller-${version}.dmg` 
         : `SnapCuller-Setup-${version}.exe`
     const downloadUrl = `https://snap-culler-proxy.vercel.app/${fileName}`
-    const PlatformIcon = os === 'mac' ? Apple : Monitor
 
     return (
-        <section className="relative w-full py-16 md:py-32 px-4 flex flex-col items-center justify-center overflow-hidden text-center">
-            {/* Version Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-6">
-                <span className="flex h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+        <section className="pt-24 pb-32 md:pt-40 md:pb-48 mx-auto max-w-6xl px-6">
+            <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-foreground/60" style={mono}>
+                <span
+                    className="inline-block h-1.5 w-1.5 rounded-full"
+                    style={{ background: "var(--gradient-brand)" }}
+                />
                 {versionLabel} Released
             </div>
-
-            {/* Main Heading */}
-            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground mb-6 leading-tight max-w-4xl">
-                Cull Photos at <br />
-                <span className="text-primary">Muscle Memory Speed</span>
+            <h1
+                className="mt-8 text-[14vw] leading-[0.95] tracking-tight md:text-[8.5rem]"
+                style={serif}
+            >
+                Cull photos at
+                <br />
+                <em
+                    className="italic bg-clip-text text-transparent not-italic"
+                    style={{ backgroundImage: "var(--gradient-brand)" }}
+                >
+                    muscle memory
+                </em>{" "}
+                <br />
+                speed.
             </h1>
-
-            {/* Subtitle */}
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed px-2">
-                The ultra-lightweight engine to sort thousands of shots instantly. 
-                No import lag, ultra-fast viewing, and a workflow that keeps your hands on the keyboard.
+            <p className="mt-10 max-w-md text-base leading-relaxed text-foreground/70">
+                The professional engine to sort thousands of shots instantly. No import lag, rapid viewing, and a workflow that keeps your hands on the keyboard.
             </p>
 
-            {/* Call to Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-sm sm:max-w-none">
+            <div className="mt-12 md:mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-10">
                 <a
                     href={downloadUrl}
-                    className="flex items-center justify-center h-12 sm:h-14 px-8 rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition-opacity w-full sm:w-auto min-w-[200px]"
+                    className="group inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.22em]"
+                    style={mono}
                 >
-                    <PlatformIcon className="h-5 w-5 mr-3 shrink-0" />
-                    Download for {platformName}
+                    <span className="border-b border-foreground/40 pb-1 transition-colors group-hover:border-foreground">
+                        Download for {platformName}
+                    </span>
+                    <span
+                        className="bg-clip-text text-transparent transition-transform group-hover:translate-x-1"
+                        style={{ backgroundImage: "var(--gradient-brand)" }}
+                    >
+                        →
+                    </span>
                 </a>
                 <a
                     href="#features"
-                    className="flex items-center justify-center h-12 sm:h-14 px-8 rounded-xl bg-secondary text-secondary-foreground font-bold hover:bg-secondary/80 transition-colors w-full sm:w-auto"
+                    className="group inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-foreground/60 hover:text-foreground"
+                    style={mono}
                 >
-                    Explore Features
+                    <span className="border-b border-transparent pb-1 transition-colors group-hover:border-foreground/40">
+                        Explore Features
+                    </span>
                 </a>
             </div>
 
-            {/* Trust Section */}
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-[11px] sm:text-sm font-medium text-muted-foreground">
+            {/* Trust Section styled minimally */}
+            <div className="mt-24 flex flex-wrap items-center gap-8 text-[11px] uppercase tracking-[0.2em] text-foreground/40" style={mono}>
                 <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-primary" />
+                    <Users className="h-3 w-3" />
                     <span>{displayedDownloads.toLocaleString()}+ photogs</span>
                 </div>
                 <div className="flex items-center gap-2">
-                    <Shield className="h-4 w-4 text-primary" />
+                    <Shield className="h-3 w-3" />
                     <span>Local Privacy</span>
                 </div>
                 <div className="flex items-center gap-2">
-                    <Zap className="h-4 w-4 text-primary" />
+                    <Zap className="h-3 w-3" />
                     <span>Fast Engine</span>
                 </div>
             </div>

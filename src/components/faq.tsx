@@ -2,6 +2,9 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import { useState } from "react"
 
+const serif = { fontFamily: "'Instrument Serif', serif" };
+const mono = { fontFamily: "'JetBrains Mono', ui-monospace, monospace" };
+
 const faqs = [
     {
         question: "Is SnapCuller free?",
@@ -40,17 +43,12 @@ function FaqItem({ question, answer, isOpen, onClick }: {
     onClick: () => void
 }) {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="border-b border-neutral-200 dark:border-neutral-800 last:border-b-0"
-        >
+        <div className="border-b border-foreground/15 last:border-b-0">
             <button
                 onClick={onClick}
-                className="w-full flex items-center justify-between py-6 text-left group"
+                className="w-full flex items-center justify-between py-8 text-left group"
             >
-                <span className="text-lg font-brand font-bold pr-4 text-foreground group-hover:text-primary transition-colors">
+                <span className="text-2xl md:text-3xl pr-4 text-foreground/80 group-hover:text-foreground transition-colors" style={serif}>
                     {question}
                 </span>
                 <motion.div
@@ -58,7 +56,7 @@ function FaqItem({ question, answer, isOpen, onClick }: {
                     transition={{ duration: 0.3 }}
                     className="flex-shrink-0"
                 >
-                    <ChevronDown className={`h-5 w-5 transition-colors ${isOpen ? 'text-primary' : 'text-muted-foreground'}`} />
+                    <ChevronDown className={`h-5 w-5 transition-colors ${isOpen ? 'text-foreground' : 'text-foreground/30'}`} />
                 </motion.div>
             </button>
             <AnimatePresence>
@@ -70,13 +68,13 @@ function FaqItem({ question, answer, isOpen, onClick }: {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                     >
-                        <p className="pb-6 text-muted-foreground leading-relaxed font-medium">
+                        <p className="pb-8 text-foreground/60 leading-relaxed text-sm">
                             {answer}
                         </p>
                     </motion.div>
                 )}
             </AnimatePresence>
-        </motion.div>
+        </div>
     )
 }
 
@@ -84,23 +82,24 @@ export function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0)
 
     return (
-        <section id="faq" className="py-24 relative">
-            <div className="container mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-4xl md:text-6xl font-brand font-black mb-6 tracking-tighter text-foreground">
-                        Frequently Asked <span className="text-primary">Questions</span>
+        <section id="faq" className="mx-auto max-w-6xl px-6 py-24 md:py-32 border-t border-foreground/15">
+            <div className="flex flex-col md:flex-row gap-16 md:gap-24">
+                <div className="md:w-1/3">
+                    <div
+                        className="text-[11px] uppercase tracking-[0.2em] text-foreground/60 mb-6"
+                        style={mono}
+                    >
+                        Support
+                    </div>
+                    <h2 className="text-4xl md:text-6xl tracking-tight mb-8" style={serif}>
+                        Common<br />Questions
                     </h2>
-                    <p className="text-lg text-muted-foreground font-medium">
-                        Everything you need to know about SnapCuller.
+                    <p className="text-sm text-foreground/50 leading-relaxed">
+                        Everything you need to know about SnapCuller. Can't find the answer you're looking for? Reach out to support.
                     </p>
-                </motion.div>
+                </div>
 
-                <div className="max-w-3xl mx-auto rounded-3xl glass-card p-2 md:p-8 border border-border">
+                <div className="md:w-2/3 border-t border-foreground/15">
                     {faqs.map((faq, i) => (
                         <FaqItem
                             key={i}

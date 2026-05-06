@@ -85,7 +85,7 @@ function LandingPage() {
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="snapculler-theme">
+    <ThemeProvider defaultTheme="light" storageKey="snapculler-theme">
       <BrowserRouter>
         <ScrollHandler />
         <Routes>

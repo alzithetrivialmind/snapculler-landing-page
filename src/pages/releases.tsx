@@ -1,7 +1,10 @@
 import { motion } from "framer-motion"
-import { Rocket, Sparkles, Tag, ArrowLeft } from "lucide-react"
+import { Rocket, Sparkles, ArrowLeft } from "lucide-react"
 import Layout from "@/components/layout"
 import { SEO } from "@/components/seo"
+
+const serif = { fontFamily: "'Instrument Serif', serif" };
+const mono = { fontFamily: "'JetBrains Mono', ui-monospace, monospace" };
 
 const releases = [
     {
@@ -333,136 +336,87 @@ export function ReleasesPage() {
                 description="Stay updated with the latest SnapCuller features, performance improvements, and bug fixes. View our version history and changelog."
                 keywords="SnapCuller releases, photo culling updates, software version history, changelog"
             />
-            <main className="pb-16">
-                <div className="container mx-auto px-4">
+            <main className="pb-24 pt-32">
+                <div className="mx-auto max-w-5xl px-6">
                     {/* Page Header */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-center mb-16"
+                        className="mb-24"
                     >
                         <a
                             href="/"
-                            className="inline-flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors mb-8 group"
+                            className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors mb-12"
+                            style={mono}
                         >
-                            <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-                            Back to Home
+                            <ArrowLeft className="h-4 w-4" />
+                            Back
                         </a>
 
-                        <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">
-                            Release <span className="text-gradient">Notes</span>
+                        <h1 className="text-5xl md:text-7xl tracking-tight mb-6" style={serif}>
+                            Release Notes
                         </h1>
-                        <p className="text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+                        <p className="text-foreground/60 max-w-xl">
                             Track every update, improvement, and fix we ship to SnapCuller.
                         </p>
                     </motion.div>
 
                     {/* Timeline */}
-                    <div className="max-w-3xl mx-auto relative">
-                        {/* Vertical Line */}
-                        <div className="absolute left-6 top-0 bottom-0 w-px bg-neutral-200 dark:bg-neutral-800 hidden md:block" />
-
-                        <div className="space-y-12">
-                            {releases.map((release, releaseIndex) => (
-                                <motion.div
-                                    key={release.version}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: releaseIndex * 0.1 }}
-                                    className="relative md:pl-16"
-                                >
-                                    {/* Timeline Dot */}
-                                    <div className="absolute left-4 top-6 hidden md:block">
-                                        <div className={`h-5 w-5 rounded-full border-4 ${release.latest
-                                            ? "bg-primary border-primary/20"
-                                            : "bg-neutral-400 dark:bg-neutral-600 border-neutral-200 dark:border-neutral-800"
-                                            }`} />
+                    <div className="space-y-16 md:space-y-24">
+                        {releases.map((release, releaseIndex) => (
+                            <motion.div
+                                key={release.version}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: releaseIndex * 0.1 }}
+                                className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 border-t border-foreground/15 pt-8 md:pt-12"
+                            >
+                                {/* Version & Date */}
+                                <div className="space-y-3">
+                                    <div className="flex items-center gap-3">
+                                        <span className="text-lg font-medium" style={mono}>v{release.version}</span>
+                                        {release.latest && (
+                                            <span className="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full border border-foreground/20 text-foreground/80" style={mono}>
+                                                Latest
+                                            </span>
+                                        )}
                                     </div>
-
-                                    {/* Release Card */}
-                                    <div className="rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 overflow-hidden">
-                                        {/* Version Header */}
-                                        <div className={`px-6 md:px-8 py-6 border-b border-neutral-200 dark:border-neutral-800 ${release.latest
-                                            ? "bg-gradient-to-r from-primary/5 to-secondary/5"
-                                            : "bg-neutral-50 dark:bg-neutral-900/30"
-                                            }`}>
-                                            <div className="flex items-center justify-between flex-wrap gap-4">
-                                                <div className="flex items-center gap-3">
-                                                    <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full ${release.latest
-                                                        ? "bg-primary/10 text-primary"
-                                                        : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"
-                                                        }`}>
-                                                        <Tag className="h-4 w-4" />
-                                                        <span className="text-sm font-bold">v{release.version}</span>
-                                                    </div>
-                                                    {release.latest && (
-                                                        <span className="px-2 py-0.5 text-xs font-bold rounded-full bg-brand-gradient text-white">
-                                                            Latest
-                                                        </span>
-                                                    )}
-                                                </div>
-                                                <span className="text-sm text-neutral-500 dark:text-neutral-400 font-medium">
-                                                    {new Date(release.date).toLocaleDateString("en-US", {
-                                                        year: "numeric",
-                                                        month: "long",
-                                                        day: "numeric",
-                                                    })}
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        {/* Release Content */}
-                                        <div className="px-6 md:px-8 py-6 space-y-8">
-                                            {release.sections.map((section, sectionIndex) => (
-                                                <motion.div
-                                                    key={sectionIndex}
-                                                    initial={{ opacity: 0, x: -10 }}
-                                                    animate={{ opacity: 1, x: 0 }}
-                                                    transition={{ delay: releaseIndex * 0.1 + sectionIndex * 0.1 }}
-                                                >
-                                                    <div className="flex items-center gap-2 mb-4">
-                                                        <div className={`p-1.5 rounded-lg ${release.latest
-                                                            ? "bg-indigo-50 dark:bg-indigo-500/10 text-indigo-500 dark:text-indigo-400"
-                                                            : "bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400"
-                                                            }`}>
-                                                            <section.icon className="h-4 w-4" />
-                                                        </div>
-                                                        <h3 className="font-bold text-neutral-900 dark:text-white">
-                                                            {section.title}
-                                                        </h3>
-                                                    </div>
-
-                                                    <ul className="space-y-3 ml-2">
-                                                        {section.items.map((item, itemIndex) => (
-                                                            <li
-                                                                key={itemIndex}
-                                                                className="flex items-start gap-3 group"
-                                                            >
-                                                                <span className={`mt-2 h-1.5 w-1.5 rounded-full flex-shrink-0 ${release.latest
-                                                                    ? "bg-primary"
-                                                                    : "bg-neutral-400 dark:bg-neutral-500"
-                                                                    }`} />
-                                                                <div>
-                                                                    <span className="font-semibold text-neutral-900 dark:text-white">
-                                                                        {item.label}
-                                                                    </span>
-                                                                    <span className="text-neutral-500 dark:text-neutral-400">
-                                                                        {" — "}
-                                                                        {item.description}
-                                                                    </span>
-                                                                </div>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                </motion.div>
-                                            ))}
-                                        </div>
+                                    <div className="text-[11px] uppercase tracking-[0.2em] text-foreground/40" style={mono}>
+                                        {new Date(release.date).toLocaleDateString("en-US", {
+                                            year: "numeric",
+                                            month: "short",
+                                            day: "numeric",
+                                        })}
                                     </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                                </div>
+
+                                {/* Release Content */}
+                                <div className="space-y-16">
+                                    {release.sections.map((section, sectionIndex) => (
+                                        <div key={sectionIndex}>
+                                            <h3 className="text-[11px] uppercase tracking-[0.2em] text-foreground/40 mb-8 flex items-center gap-2" style={mono}>
+                                                <section.icon className="h-3 w-3" />
+                                                {section.title}
+                                            </h3>
+
+                                            <ul className="space-y-10">
+                                                {section.items.map((item, itemIndex) => (
+                                                    <li key={itemIndex} className="group">
+                                                        <h4 className="text-2xl md:text-3xl mb-3" style={serif}>
+                                                            {item.label}
+                                                        </h4>
+                                                        <p className="text-foreground/70 leading-relaxed max-w-2xl">
+                                                            {item.description}
+                                                        </p>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
-
                 </div>
             </main>
         </Layout>

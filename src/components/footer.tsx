@@ -58,7 +58,7 @@ export function Footer() {
                             rel="noopener noreferrer"
                             className="hover:text-foreground transition-colors"
                         >
-                            All Rights Reserved — CV Digisentral Solusi
+                            All Rights Reserved. CV Digisentral Solusi
                         </a>
                     </p>
                     <div className="flex items-center gap-4">

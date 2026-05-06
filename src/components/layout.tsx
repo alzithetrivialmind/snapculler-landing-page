@@ -2,8 +2,6 @@ import React, { type ReactNode, useEffect } from 'react';
 import Lenis from 'lenis';
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { NoiseTexture } from "@/components/noise-texture"
-import { CustomCursor } from "@/components/custom-cursor"
 
 interface LayoutProps {
     children: ReactNode;
@@ -51,17 +49,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 selection:text-primary dark:selection:text-primary overflow-x-hidden">
-            {/* Global HUD Decorations */}
-            <div className="fixed inset-0 z-[-1] pointer-events-none bg-grid-hud opacity-30 dark:opacity-50" />
-            
-            <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden">
-                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[140px] animate-blob mix-blend-screen filter opacity-30 dark:opacity-50" />
-                <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-secondary/5 dark:bg-secondary/10 rounded-full blur-[140px] animate-blob animation-delay-2000 mix-blend-screen filter opacity-30 dark:opacity-50" />
-            </div>
-
-            <NoiseTexture />
-            <CustomCursor />
+        <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-foreground overflow-x-hidden">
             <Navbar />
 
             <main className="relative z-10 pt-20 md:pt-24 overflow-x-hidden">

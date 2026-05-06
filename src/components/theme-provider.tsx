@@ -31,10 +31,10 @@ export function ThemeProvider({
 
     useEffect(() => {
         const root = window.document.documentElement
-
-        // Temporarily forcing dark mode as requested
-        root.classList.remove("light", "dark")
-        root.classList.add("dark")
+        // Clear any cached dark mode setting, always use light theme
+        root.classList.remove("dark")
+        root.classList.add("light")
+        localStorage.removeItem(storageKey)
     }, [])
 
     const value = {
