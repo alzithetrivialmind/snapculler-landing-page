@@ -27,7 +27,6 @@ export function VideoDemo() {
 
     const handlePlayVideo = () => {
         setIsPlaying(true)
-        setTimeout(() => videoRef.current?.play(), 100)
     }
 
     return (
@@ -64,23 +63,21 @@ export function VideoDemo() {
                             <div className="w-2.5 h-2.5 rounded-full bg-red-400/50" />
                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/50" />
                             <div className="w-2.5 h-2.5 rounded-full bg-green-400/50" />
-                            <span className="text-xs text-neutral-500 ml-3 font-medium">SnapCuller</span>
+                            <span className="text-xs text-neutral-500 ml-3 font-medium">SnapCuller Demo Video</span>
                         </div>
 
                         {/* Content Area */}
-                        <div className="relative bg-neutral-900 overflow-hidden max-h-[70vh] flex items-center justify-center">
+                        <div className="relative bg-neutral-900 overflow-hidden min-h-[300px] md:min-h-[500px] aspect-video flex items-center justify-center">
                             {isPlaying ? (
-                                /* ===== VIDEO PLAYER ===== */
-                                <video
-                                    ref={videoRef}
-                                    className="w-full h-auto max-h-[70vh] block"
-                                    controls
-                                    poster="/Single View.png"
-                                    onEnded={() => setIsPlaying(false)}
-                                >
-                                    <source src="/demo-video.mp4" type="video/mp4" />
-                                    <source src="/demo-video.webm" type="video/webm" />
-                                </video>
+                                /* ===== YOUTUBE VIDEO PLAYER ===== */
+                                <iframe
+                                    className="w-full h-full absolute inset-0"
+                                    src="https://www.youtube.com/embed/vJIqa7gpru4?autoplay=1&rel=0&modestbranding=1"
+                                    title="SnapCuller Demo Video"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                ></iframe>
                             ) : (
                                 /* ===== SCREENSHOT CAROUSEL + PLAY BUTTON ===== */
                                 <div className="w-full">

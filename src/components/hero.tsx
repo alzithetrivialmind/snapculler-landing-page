@@ -1,4 +1,4 @@
-import { Apple, Monitor, Zap, Users, Shield } from "lucide-react"
+import { Apple, Monitor, Zap, Users, Shield, Play } from "lucide-react"
 import { useState, useEffect } from "react"
 import { detectOS, type OS } from "../utils/os"
 
@@ -61,10 +61,11 @@ export function Hero() {
                     Download for {platformName}
                 </a>
                 <a
-                    href="#features"
+                    href="#demo"
                     className="flex items-center justify-center h-12 sm:h-14 px-8 rounded-xl bg-secondary text-secondary-foreground font-bold hover:bg-secondary/80 transition-colors w-full sm:w-auto"
                 >
-                    Explore Features
+                    <Play className="h-5 w-5 mr-3 shrink-0 fill-current" />
+                    Watch Demo
                 </a>
             </div>
 
