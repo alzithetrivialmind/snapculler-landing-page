@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight, Play } from "lucide-react"
-import { useState, useRef } from "react"
+import { useState } from "react"
 
 const screenshots = [
     {
@@ -20,7 +20,6 @@ const screenshots = [
 export function VideoDemo() {
     const [current, setCurrent] = useState(0)
     const [isPlaying, setIsPlaying] = useState(false)
-    const videoRef = useRef<HTMLVideoElement>(null)
 
     const prev = () => setCurrent((c) => (c - 1 + screenshots.length) % screenshots.length)
     const next = () => setCurrent((c) => (c + 1) % screenshots.length)
