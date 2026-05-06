@@ -18,6 +18,10 @@ const releases = [
                         description: "A premium Peek overlay, manual stack controls, and smart keyboard navigation for a non-destructive burst exploration workflow.",
                     },
                     {
+                        label: "Global Selective RAW Keeping",
+                        description: "A game-changer for storage management. We've promoted this feature to a global setting—SnapCuller now intelligently skips RAW companion files for non-keepers during both manual Export and quick Bucket actions.",
+                    },
+                    {
                         label: "Grid & Filmstrip Polish",
                         description: "Static filenames are now always visible, with a redesigned grid engine to prevent label clipping and standardized filmstrip ratios.",
                     },
@@ -34,6 +38,10 @@ const releases = [
                     {
                         label: "Thumbnail Stability",
                         description: "Resolved black thumbnail issues with automatic retry logic and cancelled request handling.",
+                    },
+                    {
+                        label: "Settings UI Reliability",
+                        description: "Resolved technical issues in the Settings Modal to ensure stable configuration of global storage and gamepad preferences.",
                     },
                     {
                         label: "UI & Code Sanitization",
@@ -59,10 +67,6 @@ const releases = [
                     {
                         label: "Comprehensive Documentation",
                         description: "A complete rewrite of the user guide and landing page documentation, featuring 9 chapters of detailed workflow recipes and professional troubleshooting.",
-                    },
-                    {
-                        label: "Selective RAW Keeping",
-                        description: "Save massive disk space by automatically filtering out RAW files for lower-rated photos during export while keeping both for your 'keepers'.",
                     },
                     {
                         label: "IPTC Template Workflow",
